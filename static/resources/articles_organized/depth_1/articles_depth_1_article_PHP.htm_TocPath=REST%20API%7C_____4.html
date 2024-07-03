@@ -1,0 +1,77 @@
+<div id="mc-main-content" role="main">
+<h1>PHP</h1>
+<p> </p>
+<p> </p>
+<p>This section describes how to use the swagger SDK PHP client</p>
+<p> </p>
+<ol>
+<li value="1">
+<p>Download and extract the PHP client SDK package from the unit.<br/><br/></p>
+</li>
+<li value="2">
+<p>Navigate into the extracted directory.<br/><br/></p>
+</li>
+<li value="3">
+<p>Install dependencies using composer: <span style="font-family: 'Courier New';">composer install</span></p>
+</li>
+</ol>
+<p> </p>
+<p class="blau"> </p>
+<p class="blau"><span style="font-family: 'Webdings'">i</span> More information about the build process and some code samples can be found in the extracted directory's <span style="font-family: 'Courier New';">README.md</span> file.</p>
+<p class="blau"> </p>
+<p> </p>
+<p> </p>
+<h3>SSL Certificate Issues</h3>
+<p> </p>
+<p>If the gateway uses an invalid or self-signed certificate, the requests will fail with the following message:</p>
+<p> </p>
+<p class="pc_rot">cURL error 60: SSL certificate problem: self signed certificate (see https://curl.haxx.se/libcurl/c/libcurl-errors.html)</p>
+<p> </p>
+<p>To fix this, you could either register a valid certificate for the gateway(Recommended), or you can accept the invalid certificate by disabling SSL verify in the created Guzzle client (Suggested for testing only):</p>
+<p class="pc_weiss" style="font-size: 12pt;"> </p>
+<p class="pc_weiss" style="font-size: 12pt;">$client = new GuzzleHttp\Client(['verify' =&gt; false])</p>
+<p class="pc_weiss" style="font-size: 12pt;">$apiInstance = new Swagger\Client\Api\ContactsApi(</p>
+<p class="pc_weiss" style="font-size: 12pt;">$client,</p>
+<p class="pc_weiss" style="font-size: 12pt;">$config</p>
+<p class="pc_weiss" style="font-size: 12pt;">);</p>
+<p> </p>
+<p>This statement causes the application to accept any kind of certificate.</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h3>Instruction Notes REST API for PHP Client SDK</h3>
+<p> </p>
+<ol>
+<li value="1">
+<p>Download the PHP Client SDK<br/>https://&lt;GatewayIP&gt;/?modul=maintainance&amp;site=restapi<br/><br/></p>
+</li>
+<li value="2">
+<p>The Autoload.php can be copied directly from the link without changes: <a href="https://github.com/yaoshanliang/swagger-client-php" target="_blank">https://github.com/yaoshanliang/swagger-client-php</a></p>
+<p>a. The Autoload.php must be in the same directory as the README.md of the Swagger client of the SDK.<br/><br/></p>
+</li>
+<li value="3">
+<p>Install GuzzleHttp via composer:</p>
+<p>“composer require guzzlehttp/guzzle:^7.4”<br/><br/></p>
+</li>
+<li value="4">
+<p>Configure call of GuzzleHttp:</p>
+<p>$guzzle_config = array (</p>
+<p>'verify' =&gt; false,</p>
+<p>'auth' =&gt; ['admin','admin']</p>
+<p>);</p>
+<p>a. ‘verify’ =&gt; false: so that even self signed certificates are accepted</p>
+<p>b. ‘auth’ =&gt; [&lt;Username&gt;,&lt;Password&gt;]<br/><br/></p>
+</li>
+<li value="5">
+<p>The Guzzle Config must be added when calling the client:</p>
+<p>new GuzzleHttp\Client($guzzle_config),</p>
+</li>
+</ol>
+<p> </p>
+<p style="font-weight: bold;">Note on the following classes:</p>
+<p>StateResponseSim.php</p>
+<p>MessagePayloadRecipients.php</p>
+<p>MessagePayload.php</p>
+<p> </p>
+<p>In the "getStateAllowableValues" function, the values in the array must be separated by ",".</p>
+</div>

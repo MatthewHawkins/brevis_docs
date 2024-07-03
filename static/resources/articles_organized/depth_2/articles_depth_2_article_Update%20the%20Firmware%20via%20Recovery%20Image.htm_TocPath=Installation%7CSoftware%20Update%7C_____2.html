@@ -1,0 +1,324 @@
+<div id="mc-main-content" role="main">
+<h1>Update the Firmware via Recovery Image</h1>
+<p> </p>
+<p> </p>
+<p>Installation instructions from version 4.0.0 upwards for firmware updates of the SMS Gateway.</p>
+<p> </p>
+<p> </p>
+<p class="rosa"> </p>
+<p class="rosa"><span style="font-family: 'Webdings'">ê</span> <i>A new license managment got released with firmware version 3.0. Immediately after the installation it is not possible to send SMS before uploading the appropriate license file. Pay attention to the loss of all configuration data during a software update with the recovery image.</i></p>
+<p class="rosa"> </p>
+<p> </p>
+<p class="blau"> </p>
+<p class="blau"><span style="font-family: 'Webdings'">i</span> If you don't know how to access the webinterface, you'll find an explanation on how to determine the IP-adress of the gateway <a href="../../Support Information/Frequently asked Questions/Troubleshooting/How do i find the IP adress.htm">here.</a></p>
+<p class="blau"> </p>
+<p class="blau">You then have to put the IP into the URL of your browser to access the webinterface.</p>
+<p class="blau"> </p>
+<p> </p>
+<p> </p>
+<h2>Securable Data</h2>
+<p> </p>
+<p style="background-color: #f8f8e3;"> </p>
+<p style="background-color: #f8f8e3;"><span style="font-family: 'Segoe UI Symbol'">❕</span> Necessary:</p>
+<p style="background-color: #f8f8e3;"> </p>
+<p style="background-color: #f8f8e3;">Download your current license file from the web interface ( under Help =&gt; Info ) of the SMS Gateway (from Version 3.0.5 on).</p>
+<p style="background-color: #f8f8e3;"> </p>
+<p style="background-color: #f8f8e3;">
+<img alt="" src="../../Resources/Images/Images_EN/software update_Firmware-via-rec.png"/>
+</p>
+<p style="background-color: #f8f8e3;"> </p>
+<p> </p>
+<p class="blau"> </p>
+<p class="blau"><span style="font-family: 'Webdings'">i</span> <b>Additional:</b></p>
+<p class="blau"> </p>
+<p class="blau">You can backup the following data for versions after 3.1.1:</p>
+<p class="blau"> </p>
+<p class="blau">- <a href="../Configuration/Import Contacts.htm">Import</a> and <a href="../Configuration/Address book.htm">Export</a> of the addressbook.</p>
+<p class="blau">- <a href="../../Functionality/Monitoring Functions/Monitoring.htm">Import</a> and <a href="../../Functionality/Monitoring Functions/Monitoring.htm">Export</a> of the configuration for the modul <a href="../../Support Information/Frequently asked Questions/General/Are there further modules for the SMS Gateway.htm">Monitoring.</a></p>
+<p class="blau"> </p>
+<p class="blau"><b>From Version 4 on:</b>
+</p>
+<p class="blau"> </p>
+<p class="blau">- <a href="http://mybrevis.one">Configuration Export Import</a></p>
+<p class="blau"> </p>
+<p> </p>
+<p> </p>
+<h2><a name="1._Create_a_bootable_USB_Stick_with_Rufus"></a>1. Create a bootable USB Stick with Rufus</h2>
+<p> </p>
+<p class="blau"> </p>
+<p class="blau"><span style="font-family: 'Webdings'">i</span> To download the Software you need your SMS Gateway serial number. The serial number is located on the SMS Gateway and starts with "GWX-xxxxxx", “DX1-xxxxxx” or “RX2-xxxxxx”<a href="../../Support Information/Frequently asked Questions/General/Where can I find the serial number.htm">(<a class="MCXref xref" href="../../Support Information/Frequently asked Questions/General/Where can I find the serial number.htm">Where can I find the serial number of my SMS Gateway?</a>)</a>.</p>
+<p class="blau"> </p>
+<p> </p>
+<p>1.1. First download the recovery image from <a href="https://my.brevis.one/" target="_blank">my.brevis.one.</a></p>
+<p> </p>
+<p>1.2. To create the USB Stic, download and install the Software “Rufus” <a href="https://rufus.ie/en/" target="_blank">https://rufus.ie/en/.</a></p>
+<p class="rosa"> </p>
+<p class="rosa"><span style="font-family: 'Webdings'">ê</span><i>IMPORTANT: Use a <b>2.0 USB stick</b>. 3.0 may cause errors.</i>
+</p>
+<p class="rosa"> </p>
+<p style="text-indent: 0.5in;"> </p>
+<p>1.3. Start Rufus, klick on <b>SELECT (2)</b> and select the downloaded recovery image file from your computer.</p>
+<p> </p>
+<p>
+<img alt="" src="../../Resources/Images/Images_EN/Rufus_1.jpg"/>
+</p>
+<p> </p>
+<p>1.4. The selected recovery image is displayed under <b>Startup type (3)</b>. Click on <b>START</b>.</p>
+<p> </p>
+<p>
+<img alt="" src="../../Resources/Images/Images_EN/Rufus_2.jpg"/>
+</p>
+<p> </p>
+<p>1.5. Select the recommended <b>Write in ISO image mode (4)</b> and click <b>OK</b>.</p>
+<p><b>NOTE:</b> For <b>Version 22.03</b> we recommend Writing in <b>DD image mode</b> (4.1)!</p>
+<p> </p>
+<p>
+<img alt="" src="../../Resources/Images/Images_EN/Rufus_3_668x324.jpg" style="width: 668;height: 324;"/>–</p>
+<p> </p>
+<p> </p>
+<p>1.6. Confirm the next note with <b>OK (5</b>).</p>
+<p> </p>
+<p>
+<img alt="" src="../../Resources/Images/Images_EN/Rufus_4_535x209.jpg" style="width: 535;height: 209;"/>
+</p>
+<p> </p>
+<p>1.7. A bootable USB stick is then created, see Status <b>Ready (7)</b>.</p>
+<p> </p>
+<p>
+<img alt="" src="../../Resources/Images/Images_EN/Rufus_5.jpg"/>
+</p>
+<p> </p>
+<p> </p>
+<h2>2. Preparing the SMS Gateway</h2>
+<p> </p>
+<p class="gelb"> </p>
+<p class="gelb" style="font-weight: bold;"><span style="font-family: 'Segoe UI Symbol'">❕</span> Before updating always backup your configuration!</p>
+<p class="gelb"> </p>
+<p> </p>
+<p>2.1. Turn on the SMS Gateway.</p>
+<p> </p>
+<p>2.2. Connect to the Gateway <u>via the webinterface</u> (only for Desktop Editions).</p>
+<p> </p>
+<p>2.3 Connect the USB stick to a USB port on the Gateway.</p>
+<p> </p>
+<p>2.3.1.  Bootable USB ports of the Desktop Extended Edition (DX):</p>
+<p> </p>
+<p>
+<img alt="" src="../../Resources/Images/Images_EN/desktop DX-hinten_software update_758x118.png" style="width: 758;height: 118;"/>
+</p>
+<p> </p>
+<p>2.3.2.  Bootable USB ports of the Desktop Edition:</p>
+<p> </p>
+<p>
+<img alt="" src="../../Resources/Images/Images_EN/desktop-hinten software update.png"/>
+</p>
+<p> </p>
+<p>2.3.3. Bootable USB ports of the Rack Extended  Edition (RX2):</p>
+<p> </p>
+<p>
+<img alt="" src="../../Resources/Images/Images_EN/rack-rx2-hinten_software update_USB_945x142.jpg" style="width: 945;height: 142;"/>
+</p>
+<p> </p>
+<p>2.3.4. Bootable USB ports of the Rack Edition:</p>
+<p> </p>
+<p>
+<img alt="" src="../../Resources/Images/Images_EN/software update_rack-hinten_930x93.jpg" style="width: 930;height: 93;"/>
+</p>
+<p> </p>
+<p> </p>
+<h2>3. Install the Recovery Image on the SMS Gateway</h2>
+<p> </p>
+<p class="gelb"> </p>
+<p class="gelb" style="font-weight: bold;"><span style="font-family: 'Segoe UI Symbol'">❕</span> Before updating always backup your configuration!</p>
+<p class="gelb"> </p>
+<p> </p>
+<h3>3.1. Desktop (DX1) and Rack (RX2) Editions</h3>
+<p> </p>
+<p class="rosa"> </p>
+<p class="rosa"><span style="font-family: 'Webdings'">ê</span> It is possible that after the installation the IP of your SMS Gateway changes. This can be bypassed by setting your DHCP server to assign a static IP to your Gateway.</p>
+<p class="rosa"> </p>
+<p class="rosa">Even if the IP changes, you can easily find the new IP following the explanation <a href="../../Support Information/Frequently asked Questions/Troubleshooting/How do i find the IP adress.htm">here.</a></p>
+<p class="rosa"> </p>
+<p> </p>
+<p class="blau"> </p>
+<p class="blau"><span style="font-family: 'Webdings'">i</span> If you want see the progress of the ongoing update, connect to the serial console, explained <a href="../../Support Information/Frequently asked Questions/Troubleshooting/How do i find the IP adress.htm">here.</a> <i> During the update you will get status information through the output of the console.</i></p>
+<p class="blau"> </p>
+<p> </p>
+<p class="gelb"> </p>
+<p class="gelb" style="font-weight: bold;"><span style="font-family: 'Segoe UI Symbol'">❕</span> <span style="font-weight: normal;">We recommend connecting to the gateway using a console cable and observing the update process and intervening if necessary.</span></p>
+<p class="gelb"> </p>
+<p> </p>
+<p>3.1.1. Reboot the SMS Gateway via the webinterface: <i>Configuration → Reboot/Shutdown → Reboot</i>.</p>
+<p> </p>
+<p>3.1.2. The Gateway should now be inaccessible via the webinterface and the power LED should turn off and on again.</p>
+<p> </p>
+<p>3.1.3. The installation now starts automatically. If not, you can enter the BIOS via the console when the gateway has been restarted using F10/DEL and adjust the BOOT order.</p>
+<p> </p>
+<p>3.1.4. The Installation procedure takes approximately 30 minutes. We recommend not to fall below this recommendation. Monitor the update progress using the console.</p>
+<p> </p>
+<p>3.1.5. After successfully installing the recovery image, the IP address can be determined in the following way: <a class="MCXref xref" href="../../Support Information/Frequently asked Questions/Troubleshooting/How do i find the IP adress.htm">How do i find the IP adress of my SMS Gateway?</a></p>
+<p> </p>
+<p> </p>
+<h3>3.2. Special instructions for the Desktop Edition(GWS):</h3>
+<p> </p>
+<p>To upgrade your gateway (GWS Desktop Edition) to version 22.00 and higher, you must do the following:</p>
+<p> </p>
+<p> </p>
+<p>3.2.1. Download the latest 22 version from <a href="https://my.brevis.one/">my.brevis.one</a> (ignore warning). The login data is your serial number and IMEI of the gateway.</p>
+<p> </p>
+<p>3.2.2. Create a boot stick according to the <a href="#1._Create_a_bootable_USB_Stick_with_Rufus">instructions on this page under “1. Create a bootable USB Stick with Rufus”</a></p>
+<p> </p>
+<p>3.2.3. Save your license. You can find it under " Help &gt; Info".</p>
+<p> </p>
+<p>3.2.4. Backup your address book.</p>
+<p> </p>
+<p class="gelb" style="font-weight: bold;"> </p>
+<p class="gelb" style="font-weight: bold;"><span style="font-family: 'Segoe UI Symbol'">❕</span> <span style="font-weight: normal;">Configuration files can only be imported with the SAME firmware version. Say 22.03 to 22.03</span></p>
+<p class="gelb"> </p>
+<p> </p>
+<p>3.2.5. Disconnect your gateway from power.</p>
+<p> </p>
+<p>3.2.6. Connect the console cable.</p>
+<p> </p>
+<p>3.2.7. Open a connection to the console of the gateway, e.g. via PuTTY.</p>
+<p> </p>
+<p>3.2.8. Plug in the USB stick with the latest firmware.</p>
+<p> </p>
+<p>3.2.9. Connect the gateway to the power.</p>
+<p> </p>
+<p>3.2.10. Now look into the console window. Press F10 as soon as it can be read to get into the boot sequence.</p>
+<p> </p>
+<p>3.2.11. Select the boot stick and press Enter.</p>
+<p> </p>
+<p>3.2.12. A Linux selection screen will be displayed. This will run through automatically. If not, leave the first option selected and press Enter.</p>
+<p> </p>
+<p>3.2.13. The installation will take some time about 30-40 minutes.</p>
+<p> </p>
+<p class="gelb" style="font-weight: bold;"> </p>
+<p class="gelb" style="font-weight: bold;"><span style="font-family: 'Segoe UI Symbol'">❕</span> <span style="font-weight: normal;">Starting the installation may also take time. Do not switch off the gateway!</span></p>
+<p class="gelb"> </p>
+<p> </p>
+<p>3.2.14. As soon as "Restart / Reboot" appears in the console window, the installation is complete.- Disconnect the gateway from the power supply.</p>
+<p> </p>
+<p>3.2.15. Remove the boot stick.</p>
+<p> </p>
+<p>3.2.16. Connect the gateway to the power.</p>
+<p> </p>
+<p>3.2.17. Once the console window appears, it will take a few more minutes for this to respond to input!</p>
+<p> </p>
+<p>3.2.18. If this still does not respond to any input after 10 minutes, disconnect the gateway from power and wait a few minutes before reconnecting it.</p>
+<p> </p>
+<p>3.2.19. Establish a connection, using the IP of the gateway, and import your license file.</p>
+<p> </p>
+<p>3.2.20. The address book can be imported.</p>
+<p> </p>
+<p>Please note that the hardware performance of the GWS Gateway does not meet the optimal requirements for the current firmware. Accordingly, the response times are slower. Please take this into account.</p>
+<p> </p>
+<p> </p>
+<h3>3.3. Rack (GWL) Editions</h3>
+<p> </p>
+<p class="rosa"> </p>
+<p class="rosa"><span style="font-family: 'Webdings'">ê</span> It is possible that after the installation the IP of your SMS Gateway changes. This can be bypassed by setting your DHCP server to assign a static IP to your Gateway.</p>
+<p class="rosa"> </p>
+<p class="rosa">Even if the IP changes, you can easily find the new IP following the explanation <a href="../../Support Information/Frequently asked Questions/Troubleshooting/How do i find the IP adress.htm">here.</a></p>
+<p class="rosa"> </p>
+<p> </p>
+<p class="blau"> </p>
+<p class="blau"><span style="font-family: 'Webdings'">i</span> If you want to install the update, please connect a VGA cable to the gateway and connect it to a monitor. Afterwards, use one of the two bootable USB ports for a USB keyboard as shown in figure 2.3.4.</p>
+<p class="blau">Please insert the boot stick (USB 2.0) into the other USB port.</p>
+<p class="blau"> </p>
+<p> </p>
+<p> </p>
+<p>3.3.1. Reboot the SMS Gateway by pressing the On/Off button for approximately 5 seconds until the power LED turns off.</p>
+<p> </p>
+<p>3.3.2. Turn on the Gateway by pressing the On/Off button one time. The power LED turns on again.</p>
+<p> </p>
+<p>3.3.3. With the GWL edition, you must change the boot order after booting:</p>
+<p> </p>
+<p>
+<img alt="" src="../../Resources/Images/Images_EN/Update_Firmware_3.2.3_1.jpg"/> --&gt;&gt; Please press &lt;F11&gt; here</p>
+<p> </p>
+<p>
+<img alt="" src="../../Resources/Images/Images_EN/Update_Firmware_3.2.3_2.jpg"/> --&gt;&gt; After that please select the USB stick (here e.g.: General UDisk 5.00)</p>
+<p> </p>
+<p>3.3.4. The Gateway should now be inaccessible via the webinterface.</p>
+<p> </p>
+<p>3.3.5. The Installation now starts automatically.</p>
+<p> </p>
+<p>3.3.6. The Installation procedure takes approximately 30 minutes. We recommend not to fall below this recommendation.</p>
+<p> </p>
+<p>3.3.7. After successfully installing the recovery image, the IP address can be determined in the following way: <a class="MCXref xref" href="../../Support Information/Frequently asked Questions/Troubleshooting/How do i find the IP adress.htm">How do i find the IP adress of my SMS Gateway?</a></p>
+<p> </p>
+<p> </p>
+<h2>4. Finishing the installation</h2>
+<p> </p>
+<p class="rosa"> </p>
+<p class="rosa"><span style="font-family: 'Webdings'">ê</span> After completing the installation it is not possible to access the webinterface via HTTP anymore. The access is now done via HTTPS and could potentially lead to the following message: "This is not a safe connection". Further details you will find <a href="../../Support Information/Frequently asked Questions/General/I receive the message.htm">here</a>: </p>
+<p class="rosa"> </p>
+<p> </p>
+<p>4.1. Disconnect the Gateway from power after waiting for the recommended time.</p>
+<p> </p>
+<p>4.2. Disconnect the USB stick.</p>
+<p> </p>
+<p>4.3. Power up the SMS Gateway. The gateway can reboot itself up to 2 times before it is fully functional. No configurations should be made during this time.</p>
+<p> </p>
+<p>4.4. If the webinterface is not accessible at this point, the IP has changed. To regain access you have to reobtain the IP of the Gateway (<a class="MCXref xref" href="../../Support Information/Frequently asked Questions/Troubleshooting/How do i find the IP adress.htm">How do i find the IP adress of my SMS Gateway?</a>).</p>
+<p> </p>
+<p>4.5. The default login data is as follows: <i>user:</i> admin <i>password:</i> admin</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p class="rel_articles">Related articles</p>
+<p> </p>
+<ul>
+<li><a class="MCXref xref" href="Firmware Update.htm">Firmware Update</a>
+</li>
+</ul>
+<ul>
+<li><a class="MCXref xref" href="../Setting Up the Gateway/First steps/First steps.htm">First steps </a>
+</li>
+</ul>
+<ul>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/General/Are there further modules for the SMS Gateway.htm">Are there further modules for the SMS Gateway?</a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/General/Who has access to software updates.htm">Who has access to software updates?</a>
+</li>
+</ul>
+<ul>
+<li><a class="MCXref xref" href="../Setting Up the Gateway/Help.htm">Help</a>
+</li>
+</ul>
+<ul>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/General/How can I update the firmware.htm">How can I update the firmware of my SMS Gateway?</a>
+</li>
+</ul>
+<ul>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/General/How do I get a license.htm">How do I get a license for my SMS Gateway?</a>
+</li>
+</ul>
+<ul>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/Troubleshooting/Who can I ask if I need support.htm">Who can I ask if I need support?</a>
+</li>
+</ul>
+<ul>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/General/I receive the message.htm">I receive the message: "This is not a safe connection". What does this mean?</a>
+</li>
+</ul>
+<ul>
+<li><a class="MCXref xref" href="../Setting Up the Gateway/Upload license.htm">Upload license</a>
+</li>
+</ul>
+<ul>
+<li><a class="MCXref xref" href="../../Support Information/General/Technical Specifications.htm">Technical Specifications</a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Support Informations.htm">Support Informations</a>
+</li>
+</ul>
+<ul>
+<li>
+<p><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/Troubleshooting/How do i find the IP adress.htm">How do i find the IP adress of my SMS Gateway?</a>
+</p>
+</li>
+</ul>
+</div>

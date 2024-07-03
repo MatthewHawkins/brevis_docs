@@ -1,0 +1,358 @@
+<div id="mc-main-content" role="main">
+<h1>Message Routing</h1>
+<p> </p>
+<p class="rosa"> </p>
+<p class="rosa"><span style="font-family: 'Webdings'">ê</span> For older devices without support, this function requires the licensing of the <a href="../../Support Information/Frequently asked Questions/General/Are there further modules for the SMS Gateway.htm">Message Routing</a> module.</p>
+<p class="rosa"> </p>
+<p> </p>
+<p class="blau"> </p>
+<p class="blau"><span style="font-family: 'Webdings'">i</span> The options for this function are located in the web interface under <b>Configuration - Message Routing.</b></p>
+<p class="blau"> </p>
+<p> </p>
+<p> </p>
+<p>The Message Routing allows to forward incoming messages (SMS, E-Mail, <a href="Telegram Configuration.htm">Telegram</a> or Telegram &amp; SMS) based on configurable rules.</p>
+<p> </p>
+<p> </p>
+<h2>Overview of configurable rules</h2>
+<p> </p>
+<table style="width: 100%;">
+<col/>
+<col/>
+<tbody>
+<tr>
+<td style="background-color: #e3e3e3;"><b>Rule</b>
+</td>
+<td style="background-color: #e3e3e3;"><b>Description</b>
+</td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;">AND Connection	</td>
+<td style="background-color: #f2f2f2;">Specify one or more search pattern that are related to each other. Only if all search pattern matches the rule gets activated.</td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;">Message</td>
+<td style="background-color: #f2f2f2;">Specify the message text which activates this rule.
+On incoming emails the subject is not considered.</td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;">Message RegEx	
+</td>
+<td style="background-color: #f2f2f2;">Specify the message text which activates this rule (the sender will evaluate as <a href="https://en.wikipedia.org/wiki/Regular_expression" target="_blank">Regular Expression</a>).
+On incoming emails the subject is not considered.</td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;">NOT Connection
+</td>
+<td style="background-color: #f2f2f2;">Specify one or more search pattern to ignore the rule.</td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;">OR Connection</td>
+<td style="background-color: #f2f2f2;">Specify one or more search pattern that are related to each other. If one search pattern matches the rule gets activated.</td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;">Sender</td>
+<td style="background-color: #f2f2f2;">
+<p>Specify the sender which activates this rule.</p>
+<p> </p>
+<p><b>Example:</b>
+</p>
+<p> </p>
+<ul>
+<li>
+004917012345678</li>
+<li>max.mustermann@brevis.one</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;">Sender RegEx	
+</td>
+<td style="background-color: #f2f2f2;">
+<p>Specify the sender which activates this rule (the sender will evaluate as Regular Expression).</p>
+<p> </p>
+<p><b>Example:</b>
+</p>
+<p> </p>
+<ul>
+<li>
+^(49|43)+\d</li>
+<li>(.*)@brevis.one</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p> </p>
+<p> </p>
+<h2>GUI</h2>
+<p> </p>
+<p>
+<img alt="" src="../../Resources/Images/Images_EN/Message-routing.png"/>
+</p>
+<p> </p>
+<p>Click the <b>Add</b> button in the column rule, to add a new rule.</p>
+<p> </p>
+<p>Click the <b>Add</b> button in the column destination, to add a destination for the forwarding.</p>
+<p> </p>
+<p> </p>
+<table style="width: 100%;">
+<col/>
+<col/>
+<col/>
+<tbody>
+<tr>
+<td style="background-color: #e3e3e3;"><b>Choice</b>
+</td>
+<td style="background-color: #e3e3e3;"><b>Function</b>
+</td>
+<td style="font-weight: bold;background-color: #e3e3e3;">Requires License</td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;">Add contacts ( Telegram/Automatik )	</td>
+<td style="background-color: #f2f2f2;">Add a contact from the <a href="../../Installation/Configuration/Address book.htm">addressbook.</a></td>
+<td style="background-color: #f2f2f2;"><a href="../../Support Information/Frequently asked Questions/General/Are there further modules for the SMS Gateway.htm">Telegram</a>
+</td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;">Add groups ( SMS/E-Mail )	</td>
+<td style="background-color: #f2f2f2;">Add a <a href="../../Installation/Configuration/Groups.htm">group</a> as recipient.</td>
+<td style="background-color: #f2f2f2;"><a href="../../Support Information/Frequently asked Questions/General/Are there further modules for the SMS Gateway.htm">recipient groups</a><![CDATA[
+]]></td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;">Add contact ( SMS/E-Mail )	</td>
+<td style="background-color: #f2f2f2;">Add a contact from the <a href="../../Installation/Configuration/Address book.htm">addressbook.</a></td>
+<td style="background-color: #f2f2f2;"> </td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;">Auto responder</td>
+<td style="background-color: #f2f2f2;">Add a auto responder.</td>
+<td style="background-color: #f2f2f2;"> </td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;">Add a group (Telegrom/Automatic)</td>
+<td style="background-color: #f2f2f2;">Add a <a href="../../Installation/Configuration/Groups.htm">group</a> as recipient.</td>
+<td style="background-color: #f2f2f2;"><a href="../../Support Information/Frequently asked Questions/General/Are there further modules for the SMS Gateway.htm">Telegram</a>
+</td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;">HTTP Request	</td>
+<td style="background-color: #f2f2f2;">
+<p>Add the URL to a script which conducts further processing.</p>
+<p>Example: http://example.com/incomingsms.php?from=$NUMBER$&amp;text=$TXT$ </p>
+</td>
+<td style="background-color: #f2f2f2;"> </td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;">HTTP Request (iSMS Protokoll)</td>
+<td style="background-color: #f2f2f2;">
+<p>Add the URL to your monitoring system, to acknowledge Nagios alerts.</p>
+<p>Example:</p>
+<p>http://example.com/isms/smsack.cgi</p>
+</td>
+<td style="background-color: #f2f2f2;"> </td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p> </p>
+<p>Use the <b>arrows</b> in the column order to sort the rules. The rules will be processed in order from top to bottom. Multiple rules can match.</p>
+<p> </p>
+<p>Use the option <b>Ignore subsequent rules</b> to prevent the processing of further rules.</p>
+<p> </p>
+<p> </p>
+<p style="font-weight: bold;">Search and replace:</p>
+<p> </p>
+<p>When checking the checkmark on the field Search and replace, further options appear:</p>
+<p> </p>
+<p>
+<img alt="" src="../../Resources/Images/Images_EN/Message-routing_Search-and-replace_554x156.png" style="width: 554;height: 156;"/>
+</p>
+<p> </p>
+<p>With this option it is possible to search incoming messages with a search pattern and replace them with the substitution.</p>
+<p> </p>
+<p>The <i>first input field</i> requires a search pattern in the form of a <a href="https://en.wikipedia.org/wiki/Regular_expression" target="_blank">Regular expression</a>.</p>
+<p>The <i>second input field</i> requires the substitution for the search pattern.</p>
+<p> </p>
+<h2>Examples</h2>
+<p> </p>
+<p style="font-weight: bold;">Examples for search and replace:</p>
+<p style="font-weight: bold;"> </p>
+<p> </p>
+<table style="width: 100%;">
+<col style="width: 568px;"/>
+<col/>
+<tbody>
+<tr>
+<td>
+<img alt="" src="../../Resources/Images/Images_EN/Message-routing_Examples_537x293.png" style="width: 537;height: 293;"/>
+</td>
+<td>All incoming messages (SMS) get searched through for the search pattern <b>Alpha</b> and get replaced by <b>Bravo</b> if found.</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<hr align="center" size="0" width="100%"/>
+<p> </p>
+<table style="width: 100%;">
+<col/>
+<col/>
+<tbody>
+<tr>
+<td>
+<img alt="" src="../../Resources/Images/Images_EN/Message-routing_Examples1_542x310.png" style="width: 542;height: 310;"/>
+</td>
+<td>Example for a search pattern utilizing a <a href="https://de.wikipedia.org/wiki/Regulärer_Ausdruck" target="_blank">Regular expression</a>.
+All incoming messages (SMS) get searched through for the search patterns <b>Search 1</b> and <b>Search 2</b> and get replaced by <b>Replace</b> if found.</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p> </p>
+<p style="font-weight: bold;">Examples for logical connections and regular expressions</p>
+<p> </p>
+<table style="width: 100%;">
+<col style="width: 574px;"/>
+<col/>
+<tbody>
+<tr>
+<td>
+<img alt="" src="../../Resources/Images/Images_EN/Message-routing_Examples_logical_to_email1_553x251.png" style="width: 553;height: 251;"/>
+<p> </p>
+<hr align="center" size="0" width="100%"/>
+<p> </p>
+<p>
+<img alt="" src="../../Resources/Images/Images_EN/Message-routing_Examples_logical_to_email2_547x287.png" style="width: 547;height: 287;"/>
+</p>
+<p> </p>
+<hr align="center" size="0" width="100%"/>
+<p> </p>
+<p>
+<img alt="" src="../../Resources/Images/Images_EN/Message-routing_Examples_logical_to_email3_544x275.png" style="width: 544;height: 275;"/>
+</p>
+<p> </p>
+<hr align="center" size="0" width="100%"/>
+<p> </p>
+<p>
+<img alt="" src="../../Resources/Images/Images_EN/Message-routing_Examples_logical_to_email4_544x300.png" style="width: 544;height: 300;"/>
+</p>
+</td>
+<td>Every incoming message (SMS) will be forwarded to an E-Mail-adress</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<hr align="center" size="0" width="100%"/>
+<p> </p>
+<table style="width: 100%;">
+<col style="width: 575px;"/>
+<col/>
+<tbody>
+<tr>
+<td>
+<img alt="" src="../../Resources/Images/Images_EN/Message-routing_Examples_logical1_553x304.png" style="width: 553;height: 304;"/>
+</td>
+<td>Every incoming message (SMS) from the specified number will be forwarded.</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<hr align="center" size="0" width="100%"/>
+<p> </p>
+<table style="width: 100%;">
+<col style="width: 576px;"/>
+<col/>
+<tbody>
+<tr>
+<td>
+<img alt="" src="../../Resources/Images/Images_EN/Message-routing_Examples_logical2_554x175.png" style="width: 554;height: 175;"/>
+</td>
+<td>The incoming message (Telegram &amp; SMS) that contains the text "meeting at" will be forwarded.</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<hr align="center" size="0" width="100%"/>
+<p> </p>
+<table style="width: 100%;">
+<col style="width: 576px;"/>
+<col/>
+<tbody>
+<tr>
+<td>
+<img alt="" src="../../Resources/Images/Images_EN/Message-routing_Examples_logical3_558x173.png" style="width: 558;height: 173;"/>
+</td>
+<td>The incoming message (SMS) has to be sent from a german or austrian number to get forwarded.</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<hr align="center" size="0" width="100%"/>
+<p> </p>
+<table style="width: 100%;">
+<col style="width: 576px;"/>
+<col/>
+<tbody>
+<tr>
+<td>
+<img alt="" src="../../Resources/Images/Images_EN/Message-routing_Examples_logical4_561x174.png" style="width: 561;height: 174;"/>
+</td>
+<td>The incoming message (E-Mail) have to be sent from a sender of the domain <i>brevis.one</i> to get forwarded.
+</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<hr align="center" size="0" width="100%"/>
+<p> </p>
+<table style="width: 100%;">
+<col style="width: 577px;"/>
+<col/>
+<tbody>
+<tr>
+<td>
+<img alt="" src="../../Resources/Images/Images_EN/Message-routing_Examples_logical5_564x381.png" style="width: 564;height: 381;"/>
+</td>
+<td>Every message (SMS) that was not sent from a number with 123 at the end or that does not contain the text "Test" will be forwarded.
+</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p class="rel_articles">Related articles</p>
+<p> </p>
+<ul>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/Connecting different Services/Connecting the - Exchange Server 2013.htm">Connecting the SMS Gateway to a Microsoft Exchange Server 2013</a>
+</li>
+<li><a class="MCXref xref" href="Email to SMS.htm">Email to SMS</a>
+</li>
+<li><a class="MCXref xref" href="../../Installation/Software Update/Firmware Update.htm">Firmware Update</a>
+</li>
+<li><a class="MCXref xref" href="../../Installation/Setting Up the Gateway/First steps/First steps.htm">First steps </a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/General/Are there further modules for the SMS Gateway.htm">Are there further modules for the SMS Gateway?</a>
+</li>
+<li><a class="MCXref xref" href="../../Installation/Setting Up the Gateway/General configuration.htm">General configuration</a>
+</li>
+<li><a class="MCXref xref" href="../../Installation/Setting Up the Gateway/Help.htm">Help</a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/Sending Messages/How does Email to SMS.htm">How does Email to SMS function?</a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/General/How can I update the firmware.htm">How can I update the firmware of my SMS Gateway?</a>
+</li>
+<li><a class="MCXref xref selected" href="#">Message Routing</a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/Sending Messages/Can my SMS Gateway receive and.htm">Can my SMS Gateway receive and forward messages?</a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/General/How do I get a license.htm">How do I get a license for my SMS Gateway?</a>
+</li>
+<li><a class="MCXref xref" href="Forwarding.htm">Forwarding</a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/Troubleshooting/Who can I ask if I need support.htm">Who can I ask if I need support?</a>
+</li>
+</ul>
+</div>

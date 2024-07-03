@@ -1,0 +1,110 @@
+<div id="mc-main-content" role="main">
+<h1>CMD API</h1>
+<p> </p>
+<p>To use the CMD API you first need a <a href="../../Installation/Configuration/System users.htm">system user</a> who is authorised to use the API.</p>
+<p> </p>
+<p> </p>
+<p class="rosa"> </p>
+<p class="rosa"><span style="font-family: 'Webdings'">ê</span> We recommend that you do not use the “admin” user here but that you create a new user with restricted authorisations.</p>
+<p class="rosa"> </p>
+<p> </p>
+<h2>Using the CMD API</h2>
+<p> </p>
+<p>The API can be addressed with the following: <i>https://&lt;SMS Gateway IP&gt;/commands.php</i>.</p>
+<p>You can send data to this interface via POST or GET.</p>
+<p> </p>
+<p>The following data are expected:</p>
+<p> </p>
+<table style="width: 100%;">
+<col/>
+<col/>
+<tbody>
+<tr>
+<td style="font-weight: bold;background-color: #e3e3e3;">Parameter</td>
+<td style="font-weight: bold;background-color: #e3e3e3;">Description</td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;font-weight: bold;">mode</td>
+<td style="background-color: #f2f2f2;">
+<p>Mode in accordance with the following table.</p>
+<p> </p>
+<table style="width: 100%;">
+<col/>
+<col/>
+<tbody>
+<tr>
+<td style="font-weight: bold;background-color: #e3e3e3;">Option</td>
+<td style="font-weight: bold;background-color: #e3e3e3;">Description</td>
+</tr>
+<tr>
+<td style="background-color: #ffffff;">halt</td>
+<td style="background-color: #ffffff;">Use this option to shut down the SMS Gateway.
+</td>
+</tr>
+<tr>
+<td style="background-color: #ffffff;">reboot</td>
+<td style="background-color: #ffffff;">Use this option to reboot the SMS Gateway.
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;font-weight: bold;">password</td>
+<td style="background-color: #f2f2f2;">The user’s password.</td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;font-weight: bold;">username	</td>
+<td style="background-color: #f2f2f2;">System user authorised to access the HTTP API.</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p> </p>
+<h2>Example</h2>
+<p> </p>
+<p style="font-style: italic;">https://192.168.1.1/commands.php?</p>
+<p style="font-style: italic;">username=systemuser&amp;password=secret&amp;mode=reboot</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p class="rel_articles">Related articles</p>
+<p> </p>
+<ul>
+<li><a class="MCXref xref" href="../../Installation/Software Update/Firmware Update.htm">Firmware Update</a>
+</li>
+<li><a class="MCXref xref" href="../../Installation/Setting Up the Gateway/First steps/First steps.htm">First steps </a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/General/Are there further modules for the SMS Gateway.htm">Are there further modules for the SMS Gateway?</a>
+</li>
+<li><a class="MCXref xref" href="../../Installation/Setting Up the Gateway/Help.htm">Help</a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/General/Can I monitor the functions.htm">Can I monitor the functions of the SMS Gateway?</a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/General/How can I update the firmware.htm">How can I update the firmware of my SMS Gateway?</a>
+</li>
+<li><a class="MCXref xref" href="../Sending Messages/Incoming Messages.htm">Incoming Messages</a>
+</li>
+<li><a class="MCXref xref" href="../Status Functions/Monitor the SMS Gateway.htm">Monitor the SMS Gateway</a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/General/Are there more powerful antennas for my SMS Gateway.htm">Are there more powerful antennas for my SMS Gateway</a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/Sending Messages/Can my SMS Gateway receive and.htm">Can my SMS Gateway receive and forward messages?</a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/General/How do I get a license.htm">How do I get a license for my SMS Gateway?</a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/General/What does the signal strength.htm">What does the signal strength of the modem mean?</a>
+</li>
+<li><a class="MCXref xref" href="#" xrefformat="{paratext}">CMD API</a>
+</li>
+</ul>
+<ul>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/General/I receive the message.htm">I receive the message: "This is not a safe connection". What does this mean?</a>
+</li>
+<li><a class="MCXref xref" href="../../Installation/Setting Up the Gateway/Upload license.htm">Upload license</a>
+</li>
+</ul>
+<p> </p>
+<p> </p>
+</div>

@@ -1,0 +1,41 @@
+<div id="mc-main-content" role="main">
+<h1>Python</h1>
+<p> </p>
+<p> </p>
+<p>This section describes how to use the swagger SDK Python client
+</p>
+<p> </p>
+<ol>
+<li value="1">
+<p>Download and extract the Python client SDK package from the unit.<br/><br/></p>
+</li>
+<li value="2">
+<p>Navigate into the extracted directory.<br/><br/></p>
+</li>
+<li value="3">
+<p>Install dependencies:  <span style="font-family: 'Courier New';">python setup.py install --user</span></p>
+<p>On windows , you can launch power shell as administrator and just run: <span style="font-family: 'Courier New';">python setup.py install</span><br/></p>
+</li>
+</ol>
+<p> </p>
+<p class="blau"> </p>
+<p class="blau"><span style="font-family: 'Webdings'">i</span> More information about the build process and some code samples can be found in the extracted directory's <span style="font-family: 'Courier New';">README.md</span> file.</p>
+<p class="blau"> </p>
+<p> </p>
+<p> </p>
+<h3>SSL Certificate Issues</h3>
+<p> </p>
+<p>If the gateway uses an invalid or self-signed certificate, the requests will fail with the following message:</p>
+<p> </p>
+<p class="pc_rot">connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host. Adding certificate verification is strongly advised</p>
+<p> </p>
+<p>To fix this, you could either register a valid certificate for the gateway(Recommended), or you can accept the invalid certificate by disabling SSL verify(Suggested for testing only):</p>
+<p> </p>
+<p class="pc_weiss" style="font-size: 12pt;">import swagger_client</p>
+<p class="pc_weiss" style="font-size: 12pt;"> </p>
+<p class="pc_weiss" style="font-size: 12pt;">configuration = swagger_client.Configuration()</p>
+<p class="pc_weiss" style="font-size: 12pt;">configuration.verify_ssl = False</p>
+<p> </p>
+<p>This statement causes the application to accept any kind of certificate.</p>
+<p> </p>
+</div>

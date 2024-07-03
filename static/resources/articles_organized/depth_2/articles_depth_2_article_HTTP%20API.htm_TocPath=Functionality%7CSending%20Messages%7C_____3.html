@@ -1,0 +1,407 @@
+<div id="mc-main-content" role="main">
+<h1>HTTP API</h1>
+<p> </p>
+<p>To use the HTTP API you first need a <a href="../../Installation/Configuration/System users.htm">system user</a> who is authorised to use the API. </p>
+<p> </p>
+<p class="rosa"> </p>
+<p class="rosa"><span style="font-family: 'Webdings'">ê</span> We recommend that you do not use the “admin” user here but that you create a new user with restricted authorisations.</p>
+<p class="rosa"> </p>
+<p> </p>
+<p> </p>
+<h2>1. Create a new system user</h2>
+<p> </p>
+<ol>
+<li value="1">Log in to the SMS Gateway with the <i>admin</i> user.</li>
+<li value="2">Navigate to the <i>system user</i> option via <i>configuration</i> in the menu bar.</li>
+<li value="3">Create a new user, e.g.: <i>apiuser</i>.</li>
+<li value="4">Manage the user authorisations using the pencil symbol at the end of the line.<br/>Grant the <i>Access to the HTTP API</i> authorisation.<br/>Further authorisations are not required.</li>
+</ol>
+<p> </p>
+<hr align="center" class="title-bar-container" size="0" width="100%"/>
+<p> </p>
+<h2>2. Using the HTTP API</h2>
+<p> </p>
+<p>The API can be addressed with the following: <i>https://&lt;SMS Gateway IP&gt;/api.php</i>.</p>
+<p> </p>
+<p>You can send data to this interface via POST or GET.</p>
+<p> </p>
+<p> </p>
+<h4><b style="text-decoration: underline;">Necessary</b>
+</h4>
+<p> </p>
+<table style="width: 100%;">
+<col/>
+<col/>
+<tbody>
+<tr>
+<td style="background-color: #e3e3e3;"><b>Option</b>
+</td>
+<td style="font-weight: bold;background-color: #e3e3e3;"><span style="font-weight: bold;">Description</span>
+</td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;"><b>username</b>
+</td>
+<td style="background-color: #f2f2f2;">System user authorised to access the HTTP API.</td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;"><b>password</b>
+</td>
+<td style="background-color: #f2f2f2;">The user’s password.</td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;"><b>text</b>
+</td>
+<td style="background-color: #f2f2f2;">Content of the text message.</td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;"><b>to</b>
+</td>
+<td style="background-color: #f2f2f2;">Recipient of the text message depending on <i>mode
+</i>.</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p> </p>
+<h4><b style="text-decoration: underline;">Optional</b>
+</h4>
+<p> </p>
+<table style="width: 100%;">
+<col/>
+<col/>
+<tbody>
+<tr>
+<td style="background-color: #e3e3e3;"><b>Option</b>
+</td>
+<td style="background-color: #e3e3e3;"><b>Description</b>
+</td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;"><b>hexmode</b>
+</td>
+<td style="background-color: #f2f2f2;">Activates the hexadecimal format for the text field with true.</td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;"><b>list</b>
+</td>
+<td style="background-color: #f2f2f2;">With white a whitlist will be defined, with black a blacklist will be defined. Requires the parameter regex.
+</td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;"><b>mode</b>
+</td>
+<td style="background-color: #f2f2f2;">
+<p>Mode in accordance with the following table. Invalid modes are resulting in the default mode number.</p>
+<p> </p>
+<table style="width: 100%;">
+<col/>
+<col/>
+<col/>
+<tbody>
+<tr>
+<td style="background-color: #d9d9d9;"><b>Option</b>
+</td>
+<td style="background-color: #d9d9d9;"><b>to interpretation</b>
+</td>
+<td style="background-color: #d9d9d9;"><b>Description</b>
+</td>
+</tr>
+<tr>
+<td style="background-color: #e3e3e3;">group</td>
+<td style="background-color: #e3e3e3;">
+<p><b>to</b> = ID</p>
+<p>(recommended) or name of a user group</p>
+</td>
+<td style="background-color: #e3e3e3;">You can send a text message to a user group using this option.
+User groups are managed via <b>Configuration - Groups</b>.
+The use of groups requires the <a href="../../Support Information/Frequently asked Questions/General/Are there further modules for the SMS Gateway.htm">recipient groups</a> module to be licensed.</td>
+</tr>
+<tr>
+<td style="background-color: #e3e3e3;">number</td>
+<td style="background-color: #e3e3e3;"><b>to</b> = Recipient’s telephone number</td>
+<td style="background-color: #e3e3e3;">You can send a text message to individual telephone numbers using this option (Standard).
+
+</td>
+</tr>
+<tr>
+<td style="background-color: #e3e3e3;">telgroup</td>
+<td style="background-color: #e3e3e3;"><b>to</b> = ID (recommended) or name of a user group</td>
+<td style="background-color: #e3e3e3;">You can send a message via automatic to a user group using this option.
+Automatic trys to deliver the notification via <a href="Telegram Configuration.htm">Telegram</a>, if it fails the notification will be delivered  by text message.
+User groups are managed via <b>Configuration - Groups</b>.
+The use of groups requires the <a href="../../Support Information/Frequently asked Questions/General/Are there further modules for the SMS Gateway.htm">recipient groups</a> module to be licensed.</td>
+</tr>
+<tr>
+<td style="background-color: #e3e3e3;">telnumber</td>
+<td style="background-color: #e3e3e3;"><b>to</b> = Recipient’s telephone number</td>
+<td style="background-color: #e3e3e3;">You can send a message via automatic to individual telephone numbers using this option.
+Automatic trys to deliver the notification via <a href="Telegram Configuration.htm">Telegram</a>, if it fails the notification will be delivered  by text message.</td>
+</tr>
+<tr>
+<td style="background-color: #e3e3e3;">teluser</td>
+<td style="background-color: #e3e3e3;"><b>to</b> = ID (recommended) or name of a contact in the address book</td>
+<td style="background-color: #e3e3e3;">You can send a message via automatic to a contact using this option.
+Automatic trys to deliver the notification via <a href="Telegram Configuration.htm">Telegram</a>, if it fails the notification will be delivered  by text message.
+Contacts are managed via <b>Configuration - Address book</b>.</td>
+</tr>
+<tr>
+<td style="background-color: #e3e3e3;">user</td>
+<td style="background-color: #e3e3e3;"><b>to</b> = ID (recommended) or name of a contact in the address book</td>
+<td style="background-color: #e3e3e3;">You can send a text message to a contact using this option.
+Contacts are managed via <b>Configuration - Address book</b>.</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;"><b>regex</b>
+</td>
+<td style="background-color: #f2f2f2;">Use a regular expression with this parameter. If the regular expression matchs the used phone number the parameter list will define its behaviour. Pay attention to a necessary URL-Encoding.</td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;"><b>telauto </b>
+</td>
+<td style="background-color: #f2f2f2;">
+<p>Turns off the automatic delivery option with false.
+If this is not deactivated, the message will be sent by SMS if the recipient's number was not used for <a href="Telegram Configuration.htm">Telegram</a>.</p>
+</td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;"><b>ring</b>
+</td>
+<td style="background-color: #f2f2f2;">By adding the parameter “ring” to the query string, a voice call to the recipient will be initiated. The text message given with the parameter “text” will be ignored in this case.
+</td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;"><b>flash</b>
+</td>
+<td style="background-color: #f2f2f2;">The query parameter “flash” will generate a SMS Class 0 message, so called “flash message” which typically pops up immediately on the recipient’s phone screen.
+</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p class="rosa"> </p>
+<p class="rosa"><span style="font-family: 'Webdings'">ê</span> The functions "Ring" and "Flash SMS" are only usable with newer versions (from purchase date 2021) of the SMS Gateway. With a SIM card, which only includes the sending of SMS, our "Ring" function does not work!</p>
+<p class="rosa"> </p>
+<p> </p>
+<p> </p>
+<p class="rosa"> </p>
+<p class="rosa"><span style="font-family: 'Webdings'">ê</span> Licensing for the Telegram module is required. This licensing is free of charge for support customers. Please contact <a href="mailto:sales@brevis.one">sales@brevis.one</a>.</p>
+<p class="rosa"> </p>
+<p> </p>
+<hr align="center" class="title-bar-container" size="0" width="100%"/>
+<p> </p>
+<p> </p>
+<h2>3. Error return codes</h2>
+<table style="width: 100%;">
+<col/>
+<col/>
+<col/>
+<tbody>
+<tr>
+<td style="background-color: #e3e3e3;"><b>HTTP Status Code</b>
+</td>
+<td style="background-color: #e3e3e3;"><b>Error Output</b>
+</td>
+<td style="background-color: #e3e3e3;"><b>Description</b>
+</td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;">400</td>
+<td style="background-color: #f2f2f2;">Error. See Gateway logs for more information.
+
+</td>
+<td style="background-color: #f2f2f2;">Wrong mode, group not existing, contact not existing or wrong number.
+</td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;">400</td>
+<td style="background-color: #f2f2f2;">Error: Parameter miss.</td>
+<td style="background-color: #f2f2f2;">Missing parameters.</td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;">401</td>
+<td style="background-color: #f2f2f2;">401 Unauthorized - Username or Password wrong.
+</td>
+<td style="background-color: #f2f2f2;">Username and/or password wrong.
+</td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;">403</td>
+<td style="background-color: #f2f2f2;">403 Forbidden - Your User has no right to send SMS over API.
+</td>
+<td style="background-color: #f2f2f2;">User has no permission to send SMS over API.
+</td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;">408</td>
+<td style="background-color: #f2f2f2;">FAILED - Timeout or see Gateway logs for more information.	
+</td>
+<td style="background-color: #f2f2f2;">Server exceeded the time limit waiting for request.
+</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p class="blau"> </p>
+<p class="blau"><span style="font-family: 'Webdings'">i</span> Status Codes will additionally be output as HTTP-Response-Codes</p>
+<p class="blau"> </p>
+<p> </p>
+<hr align="center" class="title-bar-container" size="0" width="100%"/>
+<p> </p>
+<h2>4. Examples with GET</h2>
+<p> </p>
+<h4>4.1. Example SMS</h4>
+<p> </p>
+<p><b>curl</b>
+</p>
+<p> </p>
+<p class="pc"> </p>
+<p class="pc">curl -X GET "https://&lt;IP  SMS Gateway&gt;/api.php?text=Test&amp;to=00491701234567&amp;username=apiuser&amp;password=secret&amp;mode=number"</p>
+<p class="pc"> </p>
+<p> </p>
+<p><b>powershell</b>
+</p>
+<p> </p>
+<p class="pc"> </p>
+<p class="pc">Invoke-WebRequest -Uri "https://&lt;IP SMS Gateway&gt;/api.php?text=Test&amp;to=00491701234567&amp;username=apiuser&amp;password=secret&amp;mode=number" -Method GET</p>
+<p class="pc"> </p>
+<p> </p>
+<p> </p>
+<h4>4.2. Example <a href="Telegram Configuration.htm">Telegram</a></h4>
+<p> </p>
+<p><b>curl</b>
+</p>
+<p> </p>
+<p class="pc"> </p>
+<p class="pc">curl -X GET "https://&lt;IP SMS Gateway&gt;/api.php?text=Test&amp;to=00491701234567&amp;username=apiuser&amp;password=secret&amp;mode=telnumber&amp;telauto=false"</p>
+<p class="pc"> </p>
+<p> </p>
+<p><b>powershell</b>
+</p>
+<p> </p>
+<p class="pc"> </p>
+<p class="pc">Invoke-WebRequest -Uri "https://&lt;IP SMS Gateway&gt;/api.php?text=Test&amp;to=00491701234567&amp;username=apiuser&amp;password=secret&amp;mode=telnumber&amp;telauto=false" -Method GET</p>
+<p class="pc"> </p>
+<p> </p>
+<p style="font-weight: bold;font-style: italic;"> </p>
+<h4>4.3. Example Hexmode</h4>
+<p> </p>
+<p><b>curl</b>
+</p>
+<p> </p>
+<p class="pc"> </p>
+<p class="pc">curl -X GET "https://&lt;IP SMS Gateway&gt;/api.php?text=48616c6c6f2064696573206973742065696e65205465737420534d53&amp;to=00491701234567&amp;username=apiuser&amp;password=secret&amp;hexmode=true"</p>
+<p class="pc"> </p>
+<p> </p>
+<p><b>powershell</b>
+</p>
+<p> </p>
+<p class="pc"> </p>
+<p class="pc">Invoke-WebRequest -Uri "https://&lt;IP SMS Gateway&gt;/api.php?text=48616c6c6f2064696573206973742065696e65205465737420534d53&amp;to=00491701234567&amp;username=apiuser&amp;password=secret&amp;hexmode=true" -Method GET</p>
+<p class="pc"> </p>
+<p> </p>
+<hr align="center" class="title-bar-container" size="0" width="100%"/>
+<p> </p>
+<h2>5. Examples with POST</h2>
+<p> </p>
+<h4>5.1. Example SMS</h4>
+<p> </p>
+<p><b>curl</b>
+</p>
+<p> </p>
+<p class="pc"> </p>
+<p class="pc">curl -X POST -d "text=Test&amp;to=00491701234567&amp;username=apiuser&amp;password=secret&amp;mode=number" "https://&lt;IP SMS Gateway&gt;/api.php"</p>
+<p class="pc"> </p>
+<p> </p>
+<p><b>powershell</b>
+</p>
+<p> </p>
+<p class="pc"> </p>
+<p class="pc">Invoke-WebRequest -Uri https:<span>//&lt;IP SMS Gateway&gt;/api.php -Method POST -Body @{username='apiuser';password='secret';to='01701234567';text='Test';mode='number'}</span></p>
+<p class="pc"> </p>
+<p> </p>
+<p> </p>
+<h4>5.2. Example <a href="Telegram Configuration.htm">Telegram</a></h4>
+<p> </p>
+<p style="font-weight: bold;"><span style="font-weight: bold;">curl</span>
+</p>
+<p> </p>
+<p class="pc"> </p>
+<p class="pc">curl -X POST -d "text=Test&amp;to=00491701234567&amp;username=apiuser&amp;password=secret&amp;mode=telnumber&amp;telauto=false" "https://&lt;IP SMS Gateway&gt;/api.php"</p>
+<p class="pc"> </p>
+<p> </p>
+<p><b>powershell</b>
+</p>
+<p> </p>
+<p class="pc"> </p>
+<p class="pc">Invoke-WebRequest -Uri https://&lt;IP SMS Gateway&gt;/api.php -Method POST -Body @{username='apiuser';password='secret';to='01701234567';text='Test';mode='telnumber';telauto='false'}</p>
+<p class="pc"> </p>
+<p> </p>
+<p> </p>
+<h4>5.3. Example Hexmode</h4>
+<p> </p>
+<p><b>curl</b>
+</p>
+<p> </p>
+<p class="pc"> </p>
+<p class="pc">curl -X POST -d "text=48616c6c6f2064696573206973742065696e65205465737420534d53&amp;to=00491701234567&amp;username=apiuser&amp;password=secret&amp;hexmode=true" "https://&lt;IP SMS Gateway&gt;/api.php"</p>
+<p class="pc"> </p>
+<p> </p>
+<p><b>powershell</b>
+</p>
+<p> </p>
+<p class="pc"> </p>
+<p class="pc">Invoke-WebRequest -Uri https://&lt;IP SMS Gateway&gt;/api.php -Method POST -Body @{username='apiuser';password='secret';to='01701234567';text='48616c6c6f2064696573206973742065696e65205465737420534d53';hexmode='true'}</p>
+<p class="pc"> </p>
+<p> </p>
+<p> </p>
+<p style="background-color: #f8f8e3;"> </p>
+<p style="background-color: #f8f8e3;font-size: 16pt;font-weight: bold;"><span style="font-family: 'Segoe UI Symbol'">❕</span> URL encoding</p>
+<p style="background-color: #f8f8e3;"> </p>
+<p class="gelb">A few special symbols and spaces cannot be sent via the HTTP API without <a href="https://de.wikipedia.org/wiki/URL-Encoding" target="_blank">URL encoding</a>. Use the percentage sign to code the content of your message.</p>
+<p style="background-color: #f8f8e3;"> </p>
+<p style="background-color: #f8f8e3;">
+<img alt="" src="../../Resources/Images/Images_EN/HTTP API_URL-encoding.png"/>
+</p>
+<p style="background-color: #f8f8e3;"> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p class="rel_articles">Related articles</p>
+<p> </p>
+<ul>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/Sending Messages/Can I automate the sending.htm">Can I automate the sending of text messages?</a>
+</li>
+<li><a class="MCXref xref" href="Email to SMS.htm">Email to SMS</a>
+</li>
+<li><a class="MCXref xref" href="../../Installation/Software Update/Firmware Update.htm">Firmware Update</a>
+</li>
+<li><a class="MCXref xref" href="../../Installation/Setting Up the Gateway/First steps/First steps.htm">First steps </a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/General/Are there further modules for the SMS Gateway.htm">Are there further modules for the SMS Gateway?</a>
+</li>
+<li><a class="MCXref xref" href="../../Installation/Setting Up the Gateway/Help.htm">Help</a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/Sending Messages/How does Email to SMS.htm">How does Email to SMS function?</a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/General/How can I update the firmware.htm">How can I update the firmware of my SMS Gateway?</a>
+</li>
+<li><a class="MCXref xref" href="#" xrefformat="{paratext}">HTTP API</a>
+</li>
+<li><a class="MCXref xref" href="Message Routing.htm">Message Routing</a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/Sending Messages/Can my SMS Gateway receive and.htm">Can my SMS Gateway receive and forward messages?</a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/General/How do I get a license.htm">How do I get a license for my SMS Gateway?</a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/Sending Messages/Can the SMS Gateway send to landline.htm">Can the SMS Gateway send to landline numbers?</a>
+</li>
+<li><a class="MCXref xref" href="Sending messages via the web interface.htm">Sending messages via the web interface</a>
+</li>
+</ul>
+<p> </p>
+</div>
