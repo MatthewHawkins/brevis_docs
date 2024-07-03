@@ -1,0 +1,158 @@
+<div id="mc-main-content" role="main">
+<h1>Monitor the SMS Gateway</h1>
+<p> </p>
+<p>The SMS Gateway offers a status page from which information may be obtained: <i>http://&lt;IP Adresse Gateway&gt;/check.php?option=&lt;option&gt; (the option parameter is optional, you will have all values if you leave it out)</i></p>
+<p> </p>
+<p>You can have this monitored by your monitoring system using a check_http for example.</p>
+<p> </p>
+<p> </p>
+<h2>The options at a glance</h2>
+<p> </p>
+<table style="width: 100%;">
+<col/>
+<col/>
+<tbody>
+<tr>
+<td style="background-color: #e3e3e3;font-weight: bold;">Option</td>
+<td style="background-color: #e3e3e3;font-weight: bold;">Description</td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;">disk</td>
+<td style="background-color: #f2f2f2;">Specifies how much internal memory is occupied (bytes).
+
+</td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;">failed</td>
+<td style="background-color: #f2f2f2;">Number of messages which could not be sent.
+
+</td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;">load</td>
+<td style="background-color: #f2f2f2;">Indicates the loading of the SMS Gateway.
+
+</td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;">que</td>
+<td style="background-color: #f2f2f2;">Specifies how many messages are in the queue.
+
+</td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;">signal
+
+</td>
+<td style="background-color: #f2f2f2;">
+<p>Specifies the signal strength.</p>
+<p>No number is returned if there is a modem fault. </p>
+</td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;">state</td>
+<td style="background-color: #f2f2f2;">
+<p>Specifies the Simcard status:</p>
+<p> </p>
+<table style="width: 100%;">
+<col/>
+<col/>
+<tbody>
+<tr>
+<td style="background-color: #e3e3e3;">Output</td>
+<td style="background-color: #e3e3e3;">Description</td>
+</tr>
+<tr>
+<td style="background-color: #ffffff;">SIM_NOT_INSERTED	</td>
+<td style="background-color: #ffffff;">Simcard not inserted
+</td>
+</tr>
+<tr>
+<td style="background-color: #ffffff;">NO_SIGNAL	</td>
+<td style="background-color: #ffffff;">No available Signal
+</td>
+</tr>
+<tr>
+<td style="background-color: #ffffff;">SIGNAL_OK	</td>
+<td style="background-color: #ffffff;">Good Signal
+</td>
+</tr>
+<tr>
+<td style="background-color: #ffffff;">SIGNAL_WARNING	</td>
+<td style="background-color: #ffffff;">Signal is weaker than -89 dB
+</td>
+</tr>
+<tr>
+<td style="background-color: #ffffff;">SIGNAL_TOO_WEAK	</td>
+<td style="background-color: #ffffff;">Signal is weaker than -99 dB
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;">time</td>
+<td style="background-color: #f2f2f2;">
+<p>Returns a Unix timestamp.</p>
+<p>To monitor the system time of the SMS Gateway. </p>
+</td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;">total</td>
+<td style="background-color: #f2f2f2;">Specifies how many messages the gateway has sent in total.
+
+</td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;">uptime</td>
+<td style="background-color: #f2f2f2;">Specifies how much time has passed since the last reboot of the SMS Gateway.
+
+</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p> </p>
+<h2>Plug-in for Icinga and Nagios</h2>
+<p> </p>
+<p>There is already a ready to use plug-in for Icinga and Nagios using which you can monitor your SMS Gateway. The plug-in is <a href="https://exchange.icinga.com/netways/check_brevisone" target="_blank">here</a>.</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p class="rel_articles">Related articles</p>
+<p> </p>
+<ul>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/Sending Messages/Can I automate the sending.htm">Can I automate the sending of text messages?</a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/Sending Messages/Can I automate the sending.htm">Can I automate the sending of text messages?</a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/Connecting different Services/Can I connect - Centreon.htm">Can I connect my SMS Gateway to Centreon?</a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/Connecting different Services/Can my SMS Gateway - Check-MK.htm">Can my SMS Gateway send notifications from Check_MK?</a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/Connecting different Services/Can I connect - Nagios, Icinga 1, Icinga 2.htm">Can I connect my SMS Gateway to Nagios, Icinga 1 or Icinga 2?</a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/Connecting different Services/Can I connect - SNAG.htm"> Can I connect my SMS Gateway to SNAG-View? </a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/Connecting different Services/Can I connect - Zabbix.htm">Can I connect my SMS Gateway to Zabbix?</a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/General/Can I monitor the functions.htm">Can I monitor the functions of the SMS Gateway?</a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/General/How can I import checks.htm">How can I import checks into integrated monitoring?</a>
+</li>
+<li><a class="MCXref xref" href="Messages Status.htm">Messages Status</a>
+</li>
+<li><a class="MCXref xref selected" href="#">Monitor the SMS Gateway</a>
+</li>
+<li><a class="MCXref xref" href="../Sending Messages/HTTP API.htm">HTTP API</a>
+</li>
+<li><a class="MCXref xref" href="../../Installation/Software Update/Firmware Update.htm">Firmware Update</a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/General/How can I update the firmware.htm">How can I update the firmware of my SMS Gateway?</a>
+</li>
+<li><a class="MCXref xref" href="../../Installation/Setting Up the Gateway/Help.htm">Help</a>
+</li>
+</ul>
+<p> </p>
+</div>

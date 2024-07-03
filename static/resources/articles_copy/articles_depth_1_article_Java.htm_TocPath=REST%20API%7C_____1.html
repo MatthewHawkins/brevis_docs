@@ -1,0 +1,177 @@
+<div id="mc-main-content" role="main">
+<h1>Java</h1>
+<p> </p>
+<p> </p>
+<p>This section describes how to generate the swagger SDK client jar using Maven or Gradle.</p>
+<p> </p>
+<p> </p>
+<h3>Maven</h3>
+<p> </p>
+<p>To build the client SDK jar using maven, repeat the following steps:</p>
+<p> </p>
+<ol>
+<li value="1">
+<p>Download the java SDK zip file from the unit.<br/><br/></p>
+</li>
+<li value="2">
+<p>Extract the zip file.<br/><br/></p>
+</li>
+<li value="3">
+<p>Navigate into the extracted zip directory.<br/><br/></p>
+</li>
+<li value="4">
+<p>Execute the following command to build the client SDK jar:</p>
+<p class="pc_weiss">maven clean package<br/><br/></p>
+</li>
+<li value="5">
+<p>You can find the java client SDK jar in the <tt>target/</tt> directory.</p>
+</li>
+</ol>
+<p> </p>
+<p> </p>
+<h3>Gradle</h3>
+<p> </p>
+<p>To build the client SDK using Gradle, repeat the following steps:</p>
+<p> </p>
+<ol>
+<li value="1">
+<p>Download the java SDK zip file.<br/><br/></p>
+</li>
+<li value="2">
+<p>Extract the zip file.<br/><br/></p>
+</li>
+<li value="3">
+<p>Navigate into the extracted zip directory.<br/><br/></p>
+</li>
+<li value="4">
+<p>Execute the gradlew.bat file.<br/><br/></p>
+</li>
+<li value="5">
+<p>Execute the following command to build the client SDK jar:</p>
+<p class="pc_weiss">gradle build<br/><br/></p>
+</li>
+<li value="6">
+<p>You will find the jar file in the <tt>build/libs/</tt> subdirectory.</p>
+</li>
+</ol>
+<p> </p>
+<p> </p>
+<p>For more information about building the client SDK jar, check the SDK's README.md file.</p>
+<p> </p>
+<p> </p>
+<h3>Additional Dependencies</h3>
+<p> </p>
+<p>When adding the generated jar into your project's build path, keep in mind that you will need to reference the swagger client dependencies as well. If you're using maven or gradle in your Java project, simply copy the dependencies from maven's pom.xml or gradle's gradle.properties file into your project's build file. If you're not using gradle or maven, the following jars need to be added to the build path:</p>
+<p> </p>
+<p>threetenbp-1.3.5.jar</p>
+<p>swagger-annotations-2.0.0.jar</p>
+<p>okio-1.6.0.jar</p>
+<p>okhttp-2.7.5.jar</p>
+<p>logging-interceptor-2.7.5.jar</p>
+<p>javax.annotation-api-1.3.2.jar</p>
+<p>hamcrest-core-1.3.jar</p>
+<p>gson-fire-1.8.3.jar</p>
+<p>gson-2.8.1.jar</p>
+<p> </p>
+<p> </p>
+<h3>SSL Certificate Issues</h3>
+<p> </p>
+<p>Once the jar is built successfully and added to your project's build path, you can start creating some requests to query the api. If your gateway is running with the default certificate or any other self-signed certificate, you will most likely get the following Exception for each request:</p>
+<p> </p>
+<p class="pc_rot">sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target</p>
+<p class="pc_rot">at java.base/sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:439)</p>
+<p class="pc_rot">at java.base/sun.security.validator.PKIXValidator.engineValidate(PKIXValidator.java:306)</p>
+<p class="pc_rot">at java.base/sun.security.validator.Validator.validate(Validator.java:264)</p>
+<p class="pc_rot">at java.base/sun.security.ssl.X509TrustManagerImpl.validate(X509TrustManagerImpl.java:313)</p>
+<p class="pc_rot">at java.base/sun.security.ssl.X509TrustManagerImpl.checkTrusted(X509TrustManagerImpl.java:222)</p>
+<p class="pc_rot">at java.base/sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:129)</p>
+<p class="pc_rot">at java.base/sun.security.ssl.CertificateMessage$T12CertificateConsumer.checkServerCerts(CertificateMessage.java:629)</p>
+<p class="pc_rot">at java.base/sun.security.ssl.CertificateMessage$T12CertificateConsumer.onCertificate(CertificateMessage.java:464)</p>
+<p class="pc_rot">at java.base/sun.security.ssl.CertificateMessage$T12CertificateConsumer.consume(CertificateMessage.java:360)</p>
+<p class="pc_rot">at java.base/sun.security.ssl.SSLHandshake.consume(SSLHandshake.java:392)</p>
+<p class="pc_rot">at java.base/sun.security.ssl.HandshakeContext.dispatch(HandshakeContext.java:444)</p>
+<p class="pc_rot">at java.base/sun.security.ssl.HandshakeContext.dispatch(HandshakeContext.java:422)</p>
+<p class="pc_rot">at java.base/sun.security.ssl.TransportContext.dispatch(TransportContext.java:183)</p>
+<p class="pc_rot">at java.base/sun.security.ssl.SSLTransport.decode(SSLTransport.java:171)</p>
+<p class="pc_rot">at java.base/sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1403)</p>
+<p class="pc_rot">at java.base/sun.security.ssl.SSLSocketImpl.readHandshakeRecord(SSLSocketImpl.java:1309)</p>
+<p class="pc_rot">at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:440)</p>
+<p class="pc_rot">at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:411)</p>
+<p class="pc_rot">at com.squareup.okhttp.internal.io.RealConnection.connectTls(RealConnection.java:192)</p>
+<p class="pc_rot">at com.squareup.okhttp.internal.io.RealConnection.connectSocket(RealConnection.java:149)</p>
+<p class="pc_rot">at com.squareup.okhttp.internal.io.RealConnection.connect(RealConnection.java:112)</p>
+<p class="pc_rot">at com.squareup.okhttp.internal.http.StreamAllocation.findConnection(StreamAllocation.java:184)</p>
+<p class="pc_rot">at com.squareup.okhttp.internal.http.StreamAllocation.findHealthyConnection(StreamAllocation.java:126)</p>
+<p class="pc_rot">at com.squareup.okhttp.internal.http.StreamAllocation.newStream(StreamAllocation.java:95)</p>
+<p class="pc_rot">at com.squareup.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:281)</p>
+<p class="pc_rot">at com.squareup.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:224)</p>
+<p class="pc_rot">at com.squareup.okhttp.Call.getResponse(Call.java:286)</p>
+<p class="pc_rot">at com.squareup.okhttp.Call$ApplicationInterceptorChain.proceed(Call.java:243)</p>
+<p class="pc_rot">at com.squareup.okhttp.Call.getResponseWithInterceptorChain(Call.java:205)</p>
+<p class="pc_rot">at com.squareup.okhttp.Call.execute(Call.java:80)</p>
+<p class="pc_rot">at io.swagger.client.ApiClient.execute(ApiClient.java:840)</p>
+<p class="pc_rot">at io.swagger.client.api.MessagesApi.messagesPostWithHttpInfo(MessagesApi.java:543)</p>
+<p class="pc_rot">at io.swagger.client.api.MessagesApi.messagesPost(MessagesApi.java:529)</p>
+<p class="pc_rot">at brevis.one.Demo.main(Demo.java:82)</p>
+<p class="pc_rot">Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target</p>
+<p class="pc_rot">at java.base/sun.security.provider.certpath.SunCertPathBuilder.build(SunCertPathBuilder.java:141)</p>
+<p class="pc_rot">at java.base/sun.security.provider.certpath.SunCertPathBuilder.engineBuild(SunCertPathBuilder.java:126)</p>
+<p class="pc_rot">at java.base/java.security.cert.CertPathBuilder.build(CertPathBuilder.java:297)</p>
+<p class="pc_rot">at java.base/sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:434)</p>
+<p class="pc_rot">... 33 more</p>
+<p> </p>
+<p> </p>
+<p>This exception is thrown because the gateway's certificate is invalid i.e. not signed by a CA. To fix this issue, you can either install a valid certificate(Recommended), or you can repeat the following steps in order to tell java that you trust the gateway's certificate(Suggested only for testing):</p>
+<p> </p>
+<ol>
+<li value="1">
+<p>Download the gateway's certificate as "DER encoded binary X.509 (.CER)" using any browser.<br/><br/></p>
+</li>
+<li value="2">
+<p>Navigate to your java home directory.<br/><br/></p>
+</li>
+<li value="3">
+<p>Navigate into its <span style="font-family: 'Courier New';">lib/security</span> subdirectory.<br/><br/></p>
+</li>
+<li value="4">
+<p>Execute the following command to add the downloaded certificate to the list of accepted certificates:</p>
+</li>
+</ol>
+<p> </p>
+<p><span style="font-family: 'Courier New';">..\..\bin\keytool.exe -import -trustcacerts -keystore cacerts -storepass changeit -noprompt -alias smsgw -file &lt;path_to_downloaded_certificate&gt;</span>
+</p>
+<p> </p>
+<p class="blau"> </p>
+<p class="blau"> <span style="font-family: 'Webdings'">i</span> Replace <span style="font-family: 'Courier New';">&lt;path_to_downloaded_certificate&gt;</span> with the actual path of the downloaded certificate file. It is important to execute this command in this specific directory as it will add the certificate to the cacerts file from that directory.</p>
+<p class="blau"> </p>
+<p> </p>
+<p>Once you followed the steps mentioned above, you will get past the SSL related exceptions but the requests might still fail if you're trying to acces the gateway using it's IP or a different hostname than the one described in the certificate:</p>
+<p> </p>
+<p class="pc_rot">io.swagger.client.ApiException: javax.net.ssl.SSLPeerUnverifiedException: Hostname 10.66.115.129 not verified:</p>
+<p class="pc_rot">certificate: sha1/9UKaRIiZ5plr7Be+qy0X8NwMqMw=</p>
+<p class="pc_rot">DN: CN=braintower-sms-gateway, O=Braintower Technologies GmbH, L=Sankt Ingbert, ST=Saarland, C=Germany</p>
+<p class="pc_rot">subjectAltNames: [braintower-sms-gateway, braintower-sms-gateway.brain-tower.net, 192.168.24.202, localhost, 127.0.0.1]</p>
+<p class="pc_rot">at io.swagger.client.ApiClient.execute(ApiClient.java:844)</p>
+<p class="pc_rot">at io.swagger.client.api.MessagesApi.messagesPostWithHttpInfo(MessagesApi.java:543)</p>
+<p class="pc_rot">at io.swagger.client.api.MessagesApi.messagesPost(MessagesApi.java:529)</p>
+<p class="pc_rot">at brevis.one.Demo.main(Demo.java:89)</p>
+<p> </p>
+<p> </p>
+<p>This exception is thrown because the CN(Common Name) of the gateway's certificate refers to "braintower-sms-gateway" by default and you're  trying to access the gateway using it's IP or a different name. To get around this Exception, in your java code you can create a so called "null hostname verifier" which accepts all hostnames for all the accepted certificates. Alternatively you could only validate the one IP/hostname of the gateway.</p>
+<p> </p>
+<p>The following example shows how to add a custom hostname verifier to accept any hostname when querying the messages API:</p>
+<p> </p>
+<p class="pc_weiss" style="font-size: 12pt;">MessagesApi apiMessages = new MessagesApi();</p>
+<p class="pc_weiss" style="font-size: 12pt;">ApiClient client = apiMessages.getApiClient();</p>
+<p class="pc_weiss" style="font-size: 12pt;">client.getHttpClient().setHostnameVerifier(new HostnameVerifier() {</p>
+<p class="pc_weiss" style="font-size: 12pt;">@Override</p>
+<p class="pc_weiss" style="font-size: 12pt;">public boolean verify(String hostname, SSLSession session) {</p>
+<p class="pc_weiss" style="font-size: 12pt;">return true;</p>
+<p class="pc_weiss" style="font-size: 12pt;">}</p>
+<p class="pc_weiss" style="font-size: 12pt;">});</p>
+<p style="font-size: 12pt;"> </p>
+<p class="blau"> </p>
+<p class="blau"><span style="font-family: 'Webdings'">i</span> You must add your custom hostname verifier to each API class you want to acces. It does not suffice to add it once to the ApiClient class.</p>
+<p class="blau"> </p>
+<p> </p>
+</div>

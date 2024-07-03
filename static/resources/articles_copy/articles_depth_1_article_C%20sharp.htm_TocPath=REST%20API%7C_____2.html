@@ -1,0 +1,52 @@
+<div id="mc-main-content" role="main">
+<h1>C#</h1>
+<p> </p>
+<p> </p>
+<p>This section describes how to generate the swagger SDK client dll files, in order to use them in your C# Project. By repeating the following steps, the client SDK dll files will be created on your machine:</p>
+<p> </p>
+<p> </p>
+<ol>
+<li value="1">
+<p>Download and extract the C# client SDK package from the unit.<br/><br/></p>
+</li>
+<li value="2">
+<p>Navigate into the extracted directory.<br/><br/></p>
+</li>
+<li value="3">
+<p>Execute the <span style="font-family: 'Courier New';">build.bat</span> script file using the following command:</p>
+<p><span style="font-family: 'Courier New';">.\build.bat</span>
+<br/>
+<br/>
+</p>
+</li>
+<li value="4">
+<p>The script will generate the following dll files in the <span style="font-family: 'Courier New';">bin/</span> subdirectory:</p>
+<p style="font-family: 'Courier New';">- IO.Swagger.dll</p>
+<p style="font-family: 'Courier New';">- JsonSubTypes.dll</p>
+<p style="font-family: 'Courier New';">- Newtonsoft.Json.dll</p>
+<p style="font-family: 'Courier New';">- RestSharp.dll<br/><br/></p>
+</li>
+<li value="5">
+<p>Add these .dll files to your project, and you should be able to query the gateway's api using the SDK classes.</p>
+</li>
+</ol>
+<p> </p>
+<p class="blau"> </p>
+<p class="blau"><span style="font-family: 'Webdings'">i</span>  More information about the build process and some code samples can be found in the extracted directory's <span style="font-family: 'Courier New';">README.md</span> file.</p>
+<p class="blau"> </p>
+<p> </p>
+<p> </p>
+<h3>SSL Certificate Issues</h3>
+<p> </p>
+<p>If the gateway uses an invalid or self-signed certificate, the requests will fail with the following message:</p>
+<p> </p>
+<p class="pc_rot">cIO.Swagger.Client.ApiException: 'Error calling MessagesPost: The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel.'</p>
+<p> </p>
+<p>To fix this, you could either register a valid certificate for the gateway (recommended), or you can accept the invalid certificate by adding the following line in your C# code (suggested for testing only):</p>
+<p> </p>
+<p class="pc_weiss" style="font-size: 12pt;">System.Net.ServicePointManager.ServerCertificateValidationCallback = ((sender, certificate, chain, sslPolicyErrors) =&gt; true);</p>
+<p> </p>
+<p>This statement causes the application to accept any kind of certificate.</p>
+<p> </p>
+<p> </p>
+</div>

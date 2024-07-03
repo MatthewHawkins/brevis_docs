@@ -1,0 +1,247 @@
+<div id="mc-main-content" role="main">
+<h1>Email to SMS</h1>
+<p> </p>
+<p class="rosa"> </p>
+<p class="rosa"><span style="font-family: 'Webdings'">ê</span> For older devices without support, this function requires the licensing of the <a href="../../Support Information/Frequently asked Questions/General/Are there further modules for the SMS Gateway.htm">E-Mail to SMS</a> module.</p>
+<p class="rosa"> </p>
+<p> </p>
+<p> </p>
+<p class="blau"> </p>
+<p class="blau"><span style="font-family: 'Webdings'">i</span> The options for this function may be found in the web interface under <b>Configuration - Email to SMS.</b></p>
+<p class="blau"> </p>
+<p> </p>
+<p> </p>
+<h2>1. Configure E-mail to SMS</h2>
+<p> </p>
+<p>1. Firstly enter one or several accepted email domains (one domain per line), e.g.:</p>
+<p> </p>
+<p class="pc_grau"> </p>
+<p class="pc_grau" style="text-indent: 0.5in;">sms.local</p>
+<p class="pc_grau"> </p>
+<p class="pc_grau" style="text-indent: 0.5in;">brevis.one</p>
+<p class="pc_grau"> </p>
+<p> </p>
+<p style="text-indent: 0.5in;"> </p>
+<p>2. Now enter one or several IP addresses or network addresses from which incoming emails are to be accepted (one address per line), e.g.:</p>
+<p> </p>
+<p class="pc_grau"> </p>
+<p class="pc_grau" style="text-indent: 0.5in;">192.168.1.2</p>
+<p class="pc_grau"> </p>
+<p class="pc_grau" style="text-indent: 0.5in;">192.168.1.0/24</p>
+<p class="pc_grau"> </p>
+<p> </p>
+<p> </p>
+<p>3. Select the <i>Blacklist</i> or <i>Whitelist</i> and add one or several email addresses of the list (one address per line):</p>
+<p> </p>
+<ol style="list-style-type: lower-alpha;">
+<li value="1"><b>Blacklist</b> - The senders added to the list cannot use the email to SMS function.</li>
+<li value="2"><b>Whitelist</b> - The senders added to the list can exclusively use the email to SMS function.</li>
+<li value="3">The use of PHP Regular Expressions is possible here, e.g.:</li>
+</ol>
+<p> </p>
+<p class="pc_grau"> </p>
+<p class="pc_grau" style="text-indent: 0.5in;">(.*)@baddomain.com</p>
+<p class="pc_grau"> </p>
+<p class="pc_grau" style="text-indent: 0.5in;">(.*)@anotherbaddomain.com</p>
+<p class="pc_grau"> </p>
+<p> </p>
+<p> </p>
+<p>4. Select the parts of the email from which the text message is generated:</p>
+<p> </p>
+<ol style="list-style-type: lower-alpha;">
+<li value="1">Subject &amp; text</li>
+<li value="2">Text</li>
+<li value="3">Subject</li>
+</ol>
+<p> </p>
+<p> </p>
+<p>
+<img alt="" src="../../Resources/Images/Images_EN/Email-to-sms_functionality_796x766.png" style="width: 796;height: 766;"/>
+</p>
+<p> </p>
+<p> </p>
+<h3>Advanced</h3>
+<p> </p>
+<h4>SMTP Service</h4>
+<p> </p>
+<p>Deactivate the SMTP service if the SMS Gateway should not receive emails.</p>
+<p> </p>
+<h4>SMTP Port</h4>
+<p> </p>
+<p>Choose the desired port the SMS Gateway will receive emails.</p>
+<p>The following ports cannot be used as port: 80, 443, 8080, 8443, 3306, 22, 2391, 161.</p>
+<p>The above listed ports are already used for other SMS Gateway functions.</p>
+<p> </p>
+<h4>Force Encryption</h4>
+<p> </p>
+<p>This setting prevents the SMS Gateway to accept emails from unsecured connections. The SMS Gateway will only send emails on secured connections when activated.</p>
+<p> </p>
+<h4>TLS Version and higher</h4>
+<p> </p>
+<p>Set the lowest TLS version the SMS Gateway accepts emails from.</p>
+<p> </p>
+<h4>Encryption Ciphers</h4>
+<p> </p>
+<p>Choose between High and Medium ciphers.</p>
+<p> </p>
+<p>
+<img alt="" src="../../Resources/Images/Images_EN/Email-to-sms_Advanced.png"/>
+</p>
+<p> </p>
+<p class="gruen"> </p>
+<p class="gruen"><span style="font-family: 'Segoe UI Symbol'">➯</span> Examples on using Email to SMS are provided in our <a href="../../Support Information/Frequently asked Questions/Sending Messages/How does Email to SMS.htm">FAQs</a>.</p>
+<p class="gruen"> </p>
+<p> </p>
+<hr align="center" class="title-bar-container" size="0" width="100%"/>
+<p> </p>
+<h2>2. Test E-Mail to SMS</h2>
+<p> </p>
+<h3>Test SMTP with STARTTLS</h3>
+<p> </p>
+<p>To verify your configuration you can use the Windows Powershell or a Linux Shell.</p>
+<p> </p>
+<p>Enter the following commands:</p>
+<p> </p>
+<p class="pc_grau"> </p>
+<p class="pc_grau">openssl s_client -connect 192.168.1.1:25 -starttls smtp</p>
+<p class="pc">HELO 192.168.1.1</p>
+<p class="pc">MAIL FROM: &lt;john.doe@brevis.one&gt;</p>
+<p class="pc">rcpt to: &lt;00491701234567@sms.local&gt;</p>
+<p class="pc">DATA</p>
+<p class="pc">FROM: &lt;john.doe@brevis.one&gt;</p>
+<p class="pc">TO: &lt;00491701234567@sms.local&gt;</p>
+<p class="pc">Subject: Test</p>
+<p class="pc">Text</p>
+<p class="pc">.</p>
+<p class="pc">QUIT</p>
+<p class="pc"> </p>
+<p> </p>
+<p>The SMS Gateway will answer now:</p>
+<p> </p>
+<p class="pc_grau"> </p>
+<p class="pc_grau">CONNECTED(0000012C)</p>
+<p class="pc_grau">depth=0 C = Germany, ST = Saarland, L = Saarbrücken, O = BASIS Europe, CN = brevis.one-sms-gateway</p>
+<p class="pc_grau">verify error:num=18:self signed certificate</p>
+<p class="pc_grau">verify return:1</p>
+<p class="pc_grau">depth=0 C = Germany, ST = Saarland, L = Saarbrücken, O = BASIS Europe, CN = brevis.one-sms-gateway</p>
+<p class="pc_grau">verify return:1</p>
+<p class="pc_grau">---</p>
+<p class="pc_grau">Certificate chain</p>
+<p class="pc_grau">0 s:/C=Germany/ST=Saarland/L=Saarbrücken/O=BASIS Europe/CN=brevis.one-sms-gateway</p>
+<p class="pc_grau">i:/C=Germany/ST=Saarland/L=Saarbrücken/O=BASIS Europe/CN=brevis.one-sms-gateway</p>
+<p class="pc_grau">---</p>
+<p class="pc_grau">Server certificate</p>
+<p class="pc_grau">-----BEGIN CERTIFICATE-----</p>
+<p class="pc_grau">...</p>
+<p class="pc_grau">-----END CERTIFICATE-----</p>
+<p class="pc_grau">subject=/C=Germany/ST=Saarland/L=Saarbrücken/O=BASIS Europe/CN=brevis.one-sms-gateway</p>
+<p class="pc_grau">issuer=/C=Germany/ST=Saarland/L=Saarbrücken/O=BASIS Europe/CN=brevis.one-sms-gateway</p>
+<p class="pc_grau">---</p>
+<p class="pc_grau">No client certificate CA names sent</p>
+<p class="pc_grau">Peer signing digest: SHA512</p>
+<p class="pc_grau">Server Temp Key: ECDH, P-256, 256 bits</p>
+<p class="pc_grau">---</p>
+<p class="pc_grau">SSL handshake has read 2171 bytes and written 469 bytes</p>
+<p class="pc_grau">---</p>
+<p class="pc_grau">New, TLSv1/SSLv3, Cipher is ECDHE-RSA-AES256-GCM-SHA384</p>
+<p class="pc_grau">Server public key is 2048 bit</p>
+<p class="pc_grau">Secure Renegotiation IS supported</p>
+<p class="pc_grau">Compression: NONE</p>
+<p class="pc_grau">Expansion: NONE</p>
+<p class="pc_grau">No ALPN negotiated</p>
+<p class="pc_grau">SSL-Session:</p>
+<p class="pc_grau">Protocol : TLSv1.2</p>
+<p class="pc_grau">Cipher : ECDHE-RSA-AES256-GCM-SHA384</p>
+<p class="pc_grau">Session-ID: ...</p>
+<p class="pc_grau">Session-ID-ctx:</p>
+<p class="pc_grau">Master-Key: ...</p>
+<p class="pc_grau">Key-Arg : None</p>
+<p class="pc_grau">PSK identity: None</p>
+<p class="pc_grau">PSK identity hint: None</p>
+<p class="pc_grau">SRP username: None</p>
+<p class="pc_grau">TLS session ticket lifetime hint: 7200 (seconds)</p>
+<p class="pc_grau">TLS session ticket:</p>
+<p class="pc_grau">...</p>
+<p class="pc_grau">Start Time: 1559829035</p>
+<p class="pc_grau">Timeout : 300 (sec)</p>
+<p class="pc_grau">Verify return code: 18 (self signed certificate)</p>
+<p class="pc_grau">---</p>
+<p class="pc_grau">250 DSN</p>
+<p class="pc_grau">HELO 192.168.1.1</p>
+<p class="pc_grau">250 brevis.one-sms-gateway</p>
+<p class="pc_grau">MAIL FROM: &lt;max.mustermann@brevis.one&gt;</p>
+<p class="pc_grau">250 2.1.0 Ok</p>
+<p class="pc_grau">rcpt to: &lt;00491701234567@sms.local&gt;</p>
+<p class="pc_grau">250 2.1.5 Ok</p>
+<p class="pc_grau">DATA</p>
+<p class="pc_grau">354 End data with &lt;CR&gt;&lt;LF&gt;.&lt;CR&gt;&lt;LF&gt;</p>
+<p class="pc_grau">FROM: &lt;max.mustermann@brevis.one&gt;</p>
+<p class="pc_grau">TO: &lt;00491701234567@sms.local&gt;</p>
+<p class="pc_grau">Subject: Test</p>
+<p class="pc_grau">Text</p>
+<p class="pc_grau">.</p>
+<p class="pc_grau">250 2.0.0 Ok: queued as &lt;MessageId&gt;</p>
+<p class="pc_grau">QUIT</p>
+<p class="pc_grau">DONE</p>
+<p class="pc_grau">
+<br/>
+</p>
+<p> </p>
+<p> </p>
+<hr align="center" class="title-bar-container" size="0" width="100%"/>
+<p> </p>
+<h2>3. Test SMTP</h2>
+<p> </p>
+<p class="rosa"> </p>
+<p class="rosa">Can only be tested with the option "Force Encryption" deactivated!</p>
+<p class="rosa"> </p>
+<p> </p>
+<p>To verify your configuration you can use <a href="https://sites.google.com/site/smtptool/Home/SMTPTool.zip" target="_blank">SMTPTool</a>.</p>
+<p> </p>
+<ol>
+<li value="1">Enter the IP Address of your SMS Gateway into the <b>server</b> field.</li>
+<li value="2">Enter 25 into the <b>port</b> field.</li>
+<li value="3">Confirm with <b>Connect</b>.</li>
+<li value="4">The SMS Gateway should answer now:<br/><br/>220 brevis.one SMS Gateway<br/><br/></li>
+<li value="5">Enter the following command into the input field <b>Commands</b> and confirm with <b>Send command.</b><br/><br/>HELO 192.168.1.1<br/>MAIL FROM: max.mustermann@brevis.one<br/>RCPT TO: 00491701234567@sms.local<br/>DATA<br/>FROM: max.mustermann@brevis.one<br/>TO: 00491701234567@sms.local<br/>Subject: Test<br/>Text<br/>.<br/><br/></li>
+<li value="6">The SMS Gateway will answer:<br/><br/>250 localhost <br/>250 2.1.0 Ok<br/>250 2.1.5 Ok<br/>354 End data with &lt;CR&gt;&lt;LF&gt;.&lt;CR&gt;&lt;LF&gt;<br/>250 2.0.0 Ok: queued as ...<br/><br/></li>
+</ol>
+<p>
+<br/>
+</p>
+<p> </p>
+<p> </p>
+<p class="rel_articles">Related articles</p>
+<p> </p>
+<ul>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/Connecting different Services/Connecting the - Exchange Server 2013.htm">Connecting the SMS Gateway to a Microsoft Exchange Server 2013</a>
+</li>
+<li><a class="MCXref xref selected" href="#">Email to SMS</a>
+</li>
+<li><a class="MCXref xref" href="../../Installation/Software Update/Firmware Update.htm">Firmware Update</a>
+</li>
+<li><a class="MCXref xref" href="../../Installation/Setting Up the Gateway/First steps/First steps.htm">First steps </a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/General/Are there further modules for the SMS Gateway.htm">Are there further modules for the SMS Gateway?</a>
+</li>
+<li><a class="MCXref xref" href="../../Installation/Setting Up the Gateway/General configuration.htm">General configuration</a>
+</li>
+<li><a class="MCXref xref" href="../../Installation/Setting Up the Gateway/Help.htm">Help</a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/Sending Messages/How does Email to SMS.htm">How does Email to SMS function?</a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/General/How can I update the firmware.htm">How can I update the firmware of my SMS Gateway?</a>
+</li>
+<li><a class="MCXref xref" href="Message Routing.htm">Message Routing</a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/Sending Messages/Can my SMS Gateway receive and.htm">Can my SMS Gateway receive and forward messages?</a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/General/How do I get a license.htm">How do I get a license for my SMS Gateway?</a>
+</li>
+<li><a class="MCXref xref" href="Forwarding.htm">Forwarding</a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/Troubleshooting/Who can I ask if I need support.htm">Who can I ask if I need support?</a>
+</li>
+</ul>
+<p> </p>
+</div>

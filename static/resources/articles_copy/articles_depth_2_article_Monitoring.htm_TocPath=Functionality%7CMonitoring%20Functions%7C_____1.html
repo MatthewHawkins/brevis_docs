@@ -1,0 +1,240 @@
+<div id="mc-main-content" role="main">
+<h1>Monitoring</h1>
+<p> </p>
+<p class="rosa"> </p>
+<p class="rosa"><span style="font-family: 'Webdings'">ê</span> This function requires the licensing of the <i>Monitoring</i> module.</p>
+<p class="rosa"> </p>
+<p> </p>
+<p class="blau"> </p>
+<p class="blau"><span style="font-family: 'Webdings'">i</span> An overview of integrated monitoring is to be found in the web interface under <b>Configuration - Monitoring</b>.</p>
+<p class="blau"> </p>
+<p> </p>
+<p>Configure checks which check your system at a <i>Time interval of 5 minutes</i> and reliably report failures:</p>
+<p> </p>
+<p class="Ueberschrift_fett_16pt"> </p>
+<h2>Checks</h2>
+<p> </p>
+<h4>Options for all checks</h4>
+<p style="font-weight: normal;"> </p>
+<table style="width: 100%;border-left-style: solid;border-left-width: 1px;border-right-style: solid;border-right-width: 1px;border-top-style: solid;border-top-width: 1px;border-bottom-style: solid;border-bottom-width: 1px;">
+<col/>
+<col/>
+<tbody>
+<tr>
+<td style="font-weight: bold;border-left-style: solid;border-left-width: 0px;border-right-style: solid;border-right-width: 0px;border-top-style: solid;border-top-width: 0px;border-bottom-style: solid;border-bottom-width: 0px;padding-top: 10px;padding-bottom: 10px;">Option</td>
+<td style="font-weight: bold;border-left-style: solid;border-left-width: 0px;border-right-style: solid;border-right-width: 0px;border-top-style: solid;border-top-width: 0px;border-bottom-style: solid;border-bottom-width: 0px;padding-top: 10px;padding-bottom: 10px;">Description</td>
+</tr>
+<tr>
+<td><b>Name</b>
+</td>
+<td style="font-style: italic;">Give your check a name.</td>
+</tr>
+<tr>
+<td style="font-weight: bold;">Notification group	
+</td>
+<td>
+<p><i>Select a group of contacts which are to receive notifications.</i>
+</p>
+<p> </p>
+<p>
+If the monitoring system of your SMS Gateway notices a failure, a group of contacts will be alerted by text message or by "Automatic".</p>
+<p> </p>
+<p>
+The monitoring group is intended for this purpose as standard. After the failure has been cleared the SMS Gateway will send a recovery message.
+</p>
+<p> </p>
+<p class="rosa"> </p>
+<p class="rosa"><span style="font-family: 'Webdings'">ê</span> If you have licensed the Recipient groups module, you have the option to notify further groups.</p>
+<p class="rosa"> </p>
+</td>
+</tr>
+<tr>
+<td style="font-weight: bold;">Shipping option	
+</td>
+<td>
+<p><i>Select the shipping option of the notifications.</i>
+</p>
+<p> </p>
+<p>
+The monitoring system provides two different shipping options: "Only SMS" and Automatic".</p>
+<p> </p>
+<p>
+
+Automatic trys to deliver the notification via <a href="../Sending Messages/Telegram Configuration.htm">Telegram</a>, if it fails the notification will be delivered  by text message.</p>
+<p> </p>
+<p class="rosa"> </p>
+<p class="rosa"><![CDATA[
+]]><span style="font-family: 'Webdings'">ê</span> Licensing for the Telegram module is required. This licensing is free of charge for support customers. Please contact <a href="mailto:sales@brevis.one">sales@brevis.one</a>.</p>
+<p class="rosa"> </p>
+</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p style="font-weight: bold;"> </p>
+<p style="font-weight: bold;"> </p>
+<h4>Available Checks</h4>
+<p> </p>
+<table style="width: 100%;">
+<col/>
+<col/>
+<tbody>
+<tr>
+<td style="font-weight: bold;">Name of the check</td>
+<td>
+<p><b>Arguments</b>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>CheckHTTPAuth</p>
+<p> </p>
+<p>
+To monitor websites with
+HTTP authentication</p>
+</td>
+<td>
+<p><b>Website
+</b>
+</p>
+<p><i>Enter the website to be monitored, e.g.: http://www.brevis.one/secure</i>
+</p>
+<p> </p>
+<p style="font-weight: bold;">
+User name</p>
+<p><i>Enter the user name which is to be used for logging in
+</i>
+</p>
+<p> </p>
+<p><b>Password</b>
+</p>
+<p>Enter the <i>password</i> for the user</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>CheckHTTP</p>
+<p> </p>
+<p>
+To monitor websites</p>
+</td>
+<td>
+<p><b>Website</b>
+</p>
+<p style="font-style: normal;"><i>Enter the website to be monitored, e.g.: http://www.brevis.one</i>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>CheckPort</p>
+<p> </p>
+<p>
+To monitor the reachability of services</p>
+</td>
+<td>
+<p><b>Host</b>
+</p>
+<p><![CDATA[
+]]><i>Enter the host to be monitored: 192.168.1.254 or www.brevis.one</i></p>
+<p> </p>
+<p><![CDATA[
+]]><b>Port</b></p>
+<p><i>Enter the port which is to be monitored, e.g.: 80</i>
+</p>
+<p> </p>
+<p><![CDATA[
+]]><b>Timeout</b></p>
+<p style="font-style: normal;"><i>Enter the timeout for the reachability of the port</i>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Ping</p>
+<p> </p>
+<p>
+To monitor availabilities</p>
+</td>
+<td>
+<p><b>Host</b>
+</p>
+<p><![CDATA[
+]]><i>Specify the host to be monitored, e.g.: 192.168.1.254 or www.brevis.one</i></p>
+<p> </p>
+<p style="font-weight: bold;">
+
+Number of pings</p>
+<p><i>Enter the number of ICMP Echo Requests per check interval to be set</i>
+</p>
+<p> </p>
+<p><b>Timeout</b>
+</p>
+<p><i>Enter the timeout for the individual ICMP Echo Requests</i>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p> </p>
+<h3>Re-notification time</h3>
+<p> </p>
+<p>The re-notification time is the time interval in minutes after which a new alert is sent if a failure lasts longer.</p>
+<p> </p>
+<p> </p>
+<h3>Maximum amount checks</h3>
+<p> </p>
+<p>The SMS Gateway Monitoring allows to have up to 200 individual checks.</p>
+<p> </p>
+<p> </p>
+<h3>Example</h3>
+<p>
+<br/>
+</p>
+<p>
+<img alt="" src="../../Resources/Images/Images_EN/Monitoring_functionality.png"/>
+</p>
+<p> </p>
+<p class="gruen"> </p>
+<p class="gruen"><span style="font-family: 'Segoe UI Symbol'">➯</span> Click the Export button to save your settings, e.g. before a <a href="../../Installation/Software Update/Firmware Update.htm">Firmware update</a>.</p>
+<p class="gruen"> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p class="rel_articles">Related articles</p>
+<p> </p>
+<ul>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/Sending Messages/Can I automate the sending.htm">Can I automate the sending of text messages?</a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/Sending Messages/Can I automate the sending.htm">Can I automate the sending of text messages?</a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/Connecting different Services/Can I connect - Centreon.htm">Can I connect my SMS Gateway to Centreon?</a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/Connecting different Services/Can my SMS Gateway - Check-MK.htm">Can my SMS Gateway send notifications from Check_MK?</a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/Connecting different Services/Can I connect - Nagios, Icinga 1, Icinga 2.htm">Can I connect my SMS Gateway to Nagios, Icinga 1 or Icinga 2?</a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/Connecting different Services/Can I connect - SNAG.htm"> Can I connect my SMS Gateway to SNAG-View? </a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/Connecting different Services/Can I connect - Zabbix.htm">Can I connect my SMS Gateway to Zabbix?</a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/General/Can I monitor the functions.htm">Can I monitor the functions of the SMS Gateway?</a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/General/How can I import checks.htm">How can I import checks into integrated monitoring?</a>
+</li>
+<li><a class="MCXref xref" href="../Status Functions/Messages Status.htm">Messages Status</a>
+</li>
+<li><a class="MCXref xref" href="../Status Functions/Monitor the SMS Gateway.htm">Monitor the SMS Gateway</a>
+</li>
+<li><a class="MCXref xref" href="../Sending Messages/HTTP API.htm">HTTP API</a>
+</li>
+<li><a class="MCXref xref" href="../../Installation/Software Update/Firmware Update.htm">Firmware Update</a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/General/How can I update the firmware.htm">How can I update the firmware of my SMS Gateway?</a>
+</li>
+<li><a class="MCXref xref" href="../../Installation/Setting Up the Gateway/Help.htm">Help</a>
+</li>
+</ul>
+</div>

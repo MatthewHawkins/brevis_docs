@@ -1,0 +1,166 @@
+<div id="mc-main-content" role="main">
+<h1>SSL support</h1>
+<p> </p>
+<p> </p>
+<p class="blau"> </p>
+<p class="blau"><span style="font-family: 'Webdings'">i</span> On delivery your SMS Gateway supports the encrypted communication via <a href="https://en.wikipedia.org/wiki/HTTPS" target="_blank">HTTPS</a>.</p>
+<p class="blau"> </p>
+<p> </p>
+<p class="blau"> </p>
+<p class="blau"><span style="font-family: 'Webdings'">i</span> Further options on <a href="https://de.wikipedia.org/wiki/Transport_Layer_Security" target="_blank">SSL</a> support can be found in the web interface under <b>Configuration - SSL support</b>.</p>
+<p class="blau"> </p>
+<p> </p>
+<p> </p>
+<p>
+<img alt="" src="../../Resources/Images/Images_EN/ssl-support_configuration_439x498.png" style="width: 439;height: 498;"/>
+</p>
+<p> </p>
+<p> </p>
+<h2>1. Setting up a self-signed certificate</h2>
+<p> </p>
+<p>This is the simplest method to set up a personalised certificate for the encrypted communication with the SMS Gateway.</p>
+<p>First complete the form.</p>
+<p> </p>
+<table style="width: 100%;">
+<col/>
+<col/>
+<tbody>
+<tr>
+<td style="background-color: #e3e3e3;font-weight: bold;">Option</td>
+<td style="background-color: #e3e3e3;font-weight: bold;">Description</td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;"><b>Country</b>
+</td>
+<td style="background-color: #f2f2f2;">Enter the two-digit country code here, e.g.: <i>DE</i>.
+</td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;"><b>Domain</b>
+</td>
+<td style="background-color: #f2f2f2;">Enter the exact domain name here which is to be protected by the certificate.</td>
+</tr>
+<tr>
+<td style="background-color: #f2f2f2;"><b>Email</b>
+</td>
+<td style="background-color: #f2f2f2;">Enter the email address of the person responsible, e.g.: <i>info@brevis.one</i>.</td>
+</tr>
+<tr>
+<td style="font-weight: bold;background-color: #f2f2f2;">Locality name</td>
+<td style="background-color: #f2f2f2;">Enter your city or town here, e.g.: <i>Saarbrücken</i>.</td>
+</tr>
+<tr>
+<td style="font-weight: bold;background-color: #f2f2f2;">Organisation name
+</td>
+<td style="background-color: #f2f2f2;">Enter your name or company name here, e.g.: <i>BASIS Europe</i>
+.</td>
+</tr>
+<tr>
+<td style="font-weight: bold;background-color: #f2f2f2;">Organisation unit name
+</td>
+<td style="background-color: #f2f2f2;">Enter your organisation unit name here (if present).
+</td>
+</tr>
+<tr>
+<td style="font-weight: bold;background-color: #f2f2f2;">State or province name
+
+</td>
+<td style="background-color: #f2f2f2;">Enter your state or province here, e.g.: <i>Saarland</i>.
+
+</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p> </p>
+<p>Then confirm by clicking on the <i>Create self-signed certificate</i> button. The SMS Gateway will now generate a certificate according to your requirements and will confirm that the process was successful. Reboot the SMS Gateway.</p>
+<p> </p>
+<p style="background-color: #f8f8e3;"> </p>
+<p style="background-color: #f8f8e3;"><span style="font-family: 'Segoe UI Symbol'">❕</span> Self-signed certificates are not viewed to be secure because they have not been verified by a trustworthy agent. This circumstance has <u>no</u> influence on the security of the connection. Further information is provided in our <a href="../../Support Information/Frequently asked Questions/General/I receive the message.htm">FAQs</a>.</p>
+<p style="background-color: #f8f8e3;"> </p>
+<p> </p>
+<p> </p>
+<h2>2. Creating a <a href="https://en.wikipedia.org/wiki/Certificate_signing_request" target="_blank">Certificate Signing Request</a> (CSR)</h2>
+<p> </p>
+<p>A CSR is a digital application to create a certificate. Complete the form and click on the <i>Create CSR</i> button.</p>
+<p>The SMS Gateway creates the Certification Request in accordance with your requirements, e.g.:</p>
+<p> </p>
+<p> </p>
+<p>
+<img alt="" src="../../Resources/Images/Images_EN/ssl-support-creating_configuration.png"/>
+</p>
+<p> </p>
+<p>Send the CSR to a <a href="https://en.wikipedia.org/wiki/Certificate_authority" target="_blank">Certification agent</a>, who will issue a certificate in accordance with your application. The certificate must then be imported.</p>
+<p> </p>
+<p> </p>
+<h2>3. Importing a certificate</h2>
+<p> </p>
+<p>If you already have a certificate, you can import it. The certificate must be available in a <a href="https://en.wikipedia.org/wiki/X.509#Certificate_filename_extensions" target="_blank">.PEM</a> file.</p>
+<p>If the certificate has been created by way of a CSR created by the SMS Gateway, the certificate file may contain the base64-coded certificate exclusively, e.g.:</p>
+<p> </p>
+<p> </p>
+<p>
+<img alt="" src="../../Resources/Images/Images_EN/ssl-support-importing_configuration.png"/>
+</p>
+<p> </p>
+<p class="gelb"> </p>
+<p class="gelb"><span style="font-family: 'Segoe UI Symbol'">❕</span> If you have created the certificate differently, the certificate file must contain the base64-coded certificate and the decoded private key.</p>
+<p class="gelb"> </p>
+<p> </p>
+<p class="rosa"> </p>
+<p class="rosa"><span style="font-family: 'Webdings'">ê</span> Certificate chains are not allowed to be part of the certificate file.</p>
+<p class="rosa"> </p>
+<p> </p>
+<p> </p>
+<p>Click on the <i>Choose file</i> button and select the certificate file (.PEM) in your file system. Then confirm by clicking on the <i>Import button</i>.</p>
+<p>The SMS Gateway will confirm that the process was successful. Reboot the SMS Gateway.</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p class="rel_articles">Related articles</p>
+<p> </p>
+<ul>
+<li><a class="MCXref xref" href="../Software Update/Firmware Update.htm">Firmware Update</a>
+</li>
+</ul>
+<ul>
+<li><a class="MCXref xref" href="../Setting Up the Gateway/First steps/First steps.htm">First steps </a>
+</li>
+</ul>
+<ul>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/General/Are there further modules for the SMS Gateway.htm">Are there further modules for the SMS Gateway?</a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/General/Who has access to software updates.htm">Who has access to software updates?</a>
+</li>
+</ul>
+<ul>
+<li><a class="MCXref xref" href="../Setting Up the Gateway/Help.htm">Help</a>
+</li>
+</ul>
+<ul>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/General/How can I update the firmware.htm">How can I update the firmware of my SMS Gateway?</a>
+</li>
+</ul>
+<ul>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/General/How do I get a license.htm">How do I get a license for my SMS Gateway?</a>
+</li>
+</ul>
+<ul>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/Troubleshooting/Who can I ask if I need support.htm">Who can I ask if I need support?</a>
+</li>
+</ul>
+<ul>
+<li><a class="MCXref xref" href="../../Support Information/Frequently asked Questions/General/I receive the message.htm">I receive the message: "This is not a safe connection". What does this mean?</a>
+</li>
+</ul>
+<ul>
+<li><a class="MCXref xref" href="../Setting Up the Gateway/Upload license.htm">Upload license</a>
+</li>
+</ul>
+<ul>
+<li><a class="MCXref xref" href="../../Support Information/General/Technical Specifications.htm">Technical Specifications</a>
+</li>
+<li><a class="MCXref xref" href="../../Support Information/Support Informations.htm">Support Informations</a>
+</li>
+</ul>
+</div>
