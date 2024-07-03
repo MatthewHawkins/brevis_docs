@@ -8,8 +8,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'brevis.one',
+  tagline: 'Online Help',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -82,37 +82,34 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'brevis.one',
+                to: 'https://brevis.one/de/',
               },
             ],
           },
           {
-            title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
+                label: 'Imprint',
+                href: 'https://brevis.one/en/imprint.html',
+              }
             ],
           },
           {
-            title: 'More',
             items: [
               {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                label: 'Contact',
+                href: 'https://brevis.one/en/index.html#links',
+              }
+            ],
+          },
+          {
+            items: [
+              {
+                label: 'Newsletter',
+                href: 'https://brevis.one/en/newsletter.html',
               },
             ],
           },
