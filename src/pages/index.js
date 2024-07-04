@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react'
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -6,6 +8,7 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
+import FrontPageLink from '../components/widgets/FrontPageLink';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
@@ -29,8 +32,16 @@ export default function Home() {
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
       <main>
-        <HomepageFeatures />
+        {/* <HomepageFeatures /> */}
       </main>
+      <div css={css`display:flex; flex-direction: row; gap: 20px; justify-self: center; width: 100%; justify-content: center; padding: 6rem 0;`}>
+        <FrontPageLink imgPath={'https://docs.brevis.one/current/en/Content/Resources/Images/Images_EN/Kachel_ErsteSchritte.png'} description={"First Steps"} path={'/docs/category/first-steps'}/>
+        <FrontPageLink imgPath={'https://docs.brevis.one/current/en/Content/Resources/Images/Images_EN/Kachel_QuickStart-Desktop.png'} description={"First Steps"} path={'/docs/category/first-steps'}/>
+        <FrontPageLink imgPath={'https://docs.brevis.one/current/en/Content/Resources/Images/Images_EN/Kachel_QuickStart-Desktop.png'} description={"First Steps"} path={'/docs/category/first-steps'}/>
+        <FrontPageLink imgPath={'https://docs.brevis.one/current/en/Content/Resources/Images/Images_EN/Kachel_QuickStart-Desktop.png'} description={"First Steps"} path={'/docs/category/first-steps'}/>
+        <FrontPageLink imgPath={'https://docs.brevis.one/current/en/Content/Resources/Images/Images_EN/Kachel_QuickStart-Desktop.png'} description={"First Steps"} path={'/docs/category/first-steps'}/>
+        <FrontPageLink imgPath={'https://docs.brevis.one/current/en/Content/Resources/Images/Images_EN/Kachel_ErsteSchritte.png'} description={"First Steps"} path={'/docs/category/first-steps'}/>
+      </div>
     </Layout>
   );
 }
