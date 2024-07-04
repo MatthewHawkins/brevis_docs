@@ -10,7 +10,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const config = {
   title: 'brevis.one',
   tagline: 'Online Help',
-  favicon: 'img/favicon.ico',
+  favicon: 'https://brevis.one/de/assets/images/icon-brevis.one-128.ico',
 
   // Set the production url of your site here
   url: 'https://your-docusaurus-site.example.com',
@@ -59,10 +59,10 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'My Site',
+        title: 'brevis.one',
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          alt: 'brevis one logo',
+          src: 'https://brevis.one/de/assets/images/icon-brevis.one-128.ico',
         },
         items: [
           {
