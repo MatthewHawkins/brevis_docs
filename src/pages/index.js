@@ -34,7 +34,7 @@ export default function Home() {
       <main>
         {/* <HomepageFeatures /> */}
       </main>
-      <div css={css`display:flex; flex-direction: row; gap: 20px; justify-self: center; width: 100%; justify-content: center; padding: 6rem 0;`}>
+      <div css={css`display:flex; flex-direction: row; width: 100%; justify-content: space-around; padding: 6rem 0;`}>
         <FrontPageLink imgPath={'https://docs.brevis.one/current/en/Content/Resources/Images/Images_EN/Kachel_ErsteSchritte.png'} description={"First Steps"} path={'/docs/category/first-steps'}/>
         <FrontPageLink imgPath={'https://docs.brevis.one/current/en/Content/Resources/Images/Images_EN/Kachel_QuickStart-Desktop.png'} description={"Desktop Edition - Quick Start Guide"} path={'/docs/installation/setting_up/first_steps/quick-start-guide'}/>
         <FrontPageLink imgPath={'https://docs.brevis.one/current/en/Content/Resources/Images/Images_EN/Kachel_QuickStart-Desktop.png'} description={"Desktop Extended Edition (DX1) - Quick Start Guide"} path={'/docs/installation/setting_up/first_steps/dx1'}/>

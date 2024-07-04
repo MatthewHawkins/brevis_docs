@@ -10,6 +10,8 @@ export default function FrontPageLink( {imgPath, description, path} ) {
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 200px;
+    text-align: center;
   `
   
   return (
