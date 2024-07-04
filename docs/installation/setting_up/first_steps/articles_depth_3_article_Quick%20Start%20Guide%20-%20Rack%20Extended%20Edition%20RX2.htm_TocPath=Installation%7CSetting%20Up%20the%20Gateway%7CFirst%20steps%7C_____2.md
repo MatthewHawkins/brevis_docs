@@ -1,5 +1,5 @@
 ---
-slug: rack-extended-edition-(rx2)---quick-start-guide
+slug: rx2
 ---
 
 # Rack Extended Edition (RX2) - Quick Start Guide

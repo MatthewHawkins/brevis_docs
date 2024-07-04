@@ -1,5 +1,5 @@
 ---
-slug: rack-edition---quick-start-guide
+slug: rack-edition
 ---
 
 # Rack Edition - Quick Start Guide

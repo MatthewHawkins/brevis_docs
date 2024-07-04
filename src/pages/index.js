@@ -36,11 +36,11 @@ export default function Home() {
       </main>
       <div css={css`display:flex; flex-direction: row; gap: 20px; justify-self: center; width: 100%; justify-content: center; padding: 6rem 0;`}>
         <FrontPageLink imgPath={'https://docs.brevis.one/current/en/Content/Resources/Images/Images_EN/Kachel_ErsteSchritte.png'} description={"First Steps"} path={'/docs/category/first-steps'}/>
-        <FrontPageLink imgPath={'https://docs.brevis.one/current/en/Content/Resources/Images/Images_EN/Kachel_QuickStart-Desktop.png'} description={"First Steps"} path={'/docs/category/first-steps'}/>
-        <FrontPageLink imgPath={'https://docs.brevis.one/current/en/Content/Resources/Images/Images_EN/Kachel_QuickStart-Desktop.png'} description={"First Steps"} path={'/docs/category/first-steps'}/>
-        <FrontPageLink imgPath={'https://docs.brevis.one/current/en/Content/Resources/Images/Images_EN/Kachel_QuickStart-Desktop.png'} description={"First Steps"} path={'/docs/category/first-steps'}/>
-        <FrontPageLink imgPath={'https://docs.brevis.one/current/en/Content/Resources/Images/Images_EN/Kachel_QuickStart-Desktop.png'} description={"First Steps"} path={'/docs/category/first-steps'}/>
-        <FrontPageLink imgPath={'https://docs.brevis.one/current/en/Content/Resources/Images/Images_EN/Kachel_ErsteSchritte.png'} description={"First Steps"} path={'/docs/category/first-steps'}/>
+        <FrontPageLink imgPath={'https://docs.brevis.one/current/en/Content/Resources/Images/Images_EN/Kachel_QuickStart-Desktop.png'} description={"Desktop Edition - Quick Start Guide"} path={'/docs/installation/setting_up/first_steps/quick-start-guide'}/>
+        <FrontPageLink imgPath={'https://docs.brevis.one/current/en/Content/Resources/Images/Images_EN/Kachel_QuickStart-Desktop.png'} description={"Desktop Extended Edition (DX1) - Quick Start Guide"} path={'/docs/installation/setting_up/first_steps/dx1'}/>
+        <FrontPageLink imgPath={'https://docs.brevis.one/current/en/Content/Resources/Images/Images_EN/Kachel_QuickStart-Desktop.png'} description={"Rack Edition - Quick Start Guide"} path={'/docs/installation/setting_up/first_steps/rack-edition'}/>
+        <FrontPageLink imgPath={'https://docs.brevis.one/current/en/Content/Resources/Images/Images_EN/Kachel_QuickStart-Desktop.png'} description={"Rack Extended Edition (RX2) - Quick Start Guide"} path={'/docs/installation/setting_up/first_steps/rx2'}/>
+        <FrontPageLink imgPath={'https://docs.brevis.one/current/en/Content/Resources/Images/Images_EN/Kachel_ErsteSchritte.png'} description={"Outlook Plugin"} path={'/docs/category/outlook-plugin'}/>
       </div>
     </Layout>
   );

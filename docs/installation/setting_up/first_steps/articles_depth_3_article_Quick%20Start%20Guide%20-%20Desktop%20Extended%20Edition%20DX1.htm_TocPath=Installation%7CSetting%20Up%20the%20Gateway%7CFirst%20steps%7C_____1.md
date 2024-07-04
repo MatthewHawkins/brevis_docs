@@ -1,5 +1,5 @@
 ---
-slug: desktop-extended-edition-(dx1)---quick-start-guide
+slug: dx1
 ---
 
 # Desktop Extended Edition (DX1) - Quick Start Guide

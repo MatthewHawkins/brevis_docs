@@ -1,5 +1,5 @@
 ---
-slug: desktop-edition---quick-start-guide
+slug: quick-start-guide
 ---
 
 # Desktop Edition - Quick Start Guide
