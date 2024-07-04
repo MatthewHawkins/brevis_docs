@@ -2,7 +2,7 @@
 slug: support--and-serviceoptions
 ---
 
-# Support- and Serviceoptions
+# Support- and Service Options
 
 Download Support- and Service-Options in English
 

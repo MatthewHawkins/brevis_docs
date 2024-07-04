@@ -5,8 +5,10 @@ slug: monitor-the-sms-gateway
 # Monitor the SMS Gateway
 
 The SMS Gateway offers a status page from which information may be obtained:
+```
 _http:// <IP Adresse Gateway>/check.php?option=<option> (the option parameter
 is optional, you will have all values if you leave it out)_
+```
 
 You can have this monitored by your monitoring system using a check_http for
 example.

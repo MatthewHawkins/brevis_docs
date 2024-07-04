@@ -23,9 +23,11 @@ Further authorisations are not required.
 
 ## 2\. Using the HTTP API
 
-The API can be addressed with the following: _https:// <SMS Gateway
+The API can be addressed with the following: 
+```
+_https:// <SMS Gateway
 IP>/api.php_.
-
+```
 You can send data to this interface via POST or GET.
 
 #### **Necessary**
@@ -85,41 +87,43 @@ i Status Codes will additionally be output as HTTP-Response-Codes
 
 **curl**
 
+```
 curl -X GET "https://<IP SMS
 Gateway>/api.php?text=Test&to=00491701234567&username=apiuser&password=secret&mode=number"
+```
 
 **powershell**
-
+```
 Invoke-WebRequest -Uri "https://<IP SMS
 Gateway>/api.php?text=Test&to=00491701234567&username=apiuser&password=secret&mode=number"
 -Method GET
-
+```
 #### 4.2. Example Telegram
 
 **curl**
-
+```
 curl -X GET "https://<IP SMS
 Gateway>/api.php?text=Test&to=00491701234567&username=apiuser&password=secret&mode=telnumber&telauto=false"
-
+```
 **powershell**
-
+```
 Invoke-WebRequest -Uri "https://<IP SMS
 Gateway>/api.php?text=Test&to=00491701234567&username=apiuser&password=secret&mode=telnumber&telauto=false"
 -Method GET
-
+```
 #### 4.3. Example Hexmode
 
 **curl**
-
+```
 curl -X GET "https://<IP SMS
 Gateway>/api.php?text=48616c6c6f2064696573206973742065696e65205465737420534d53&to=00491701234567&username=apiuser&password=secret&hexmode=true"
-
+```
 **powershell**
-
+```
 Invoke-WebRequest -Uri "https://<IP SMS
 Gateway>/api.php?text=48616c6c6f2064696573206973742065696e65205465737420534d53&to=00491701234567&username=apiuser&password=secret&hexmode=true"
 -Method GET
-
+```
 * * *
 
 ## 5\. Examples with POST
@@ -127,42 +131,43 @@ Gateway>/api.php?text=48616c6c6f2064696573206973742065696e65205465737420534d53&t
 #### 5.1. Example SMS
 
 **curl**
-
+```
 curl -X POST -d
 "text=Test&to=00491701234567&username=apiuser&password=secret&mode=number"
 "https://<IP SMS Gateway>/api.php"
+```
 
 **powershell**
-
+```
 Invoke-WebRequest -Uri https://<IP SMS Gateway>/api.php -Method POST -Body
 @{username='apiuser';password='secret';to='01701234567';text='Test';mode='number'}
-
+```
 #### 5.2. Example Telegram
 
 curl
-
+```
 curl -X POST -d
 "text=Test&to=00491701234567&username=apiuser&password=secret&mode=telnumber&telauto=false"
 "https://<IP SMS Gateway>/api.php"
-
+```
 **powershell**
-
+```
 Invoke-WebRequest -Uri https://<IP SMS Gateway>/api.php -Method POST -Body
 @{username='apiuser';password='secret';to='01701234567';text='Test';mode='telnumber';telauto='false'}
-
+```
 #### 5.3. Example Hexmode
 
 **curl**
-
+```
 curl -X POST -d
 "text=48616c6c6f2064696573206973742065696e65205465737420534d53&to=00491701234567&username=apiuser&password=secret&hexmode=true"
 "https://<IP SMS Gateway>/api.php"
-
+```
 **powershell**
-
+```
 Invoke-WebRequest -Uri https://<IP SMS Gateway>/api.php -Method POST -Body
 @{username='apiuser';password='secret';to='01701234567';text='48616c6c6f2064696573206973742065696e65205465737420534d53';hexmode='true'}
-
+```
 ❕ URL encoding
 
 A few special symbols and spaces cannot be sent via the HTTP API without URL

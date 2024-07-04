@@ -12,8 +12,10 @@ new user with restricted authorisations.
 
 ## Using the CMD API
 
+```
 The API can be addressed with the following: _https:// <SMS Gateway
 IP>/commands.php_.
+```
 
 You can send data to this interface via POST or GET.
 

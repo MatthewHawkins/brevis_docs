@@ -211,7 +211,7 @@ LED turns on again.
 
 3.3.3. With the GWL edition, you must change the boot order after booting:
 
-\-->> Please press <F11> here
+\-->> Please press `<F11>` here
 
 \-->> After that please select the USB stick (here e.g.: General UDisk 5.00)
 

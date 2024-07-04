@@ -84,7 +84,7 @@ To verify your configuration you can use the Windows Powershell or a Linux
 Shell.
 
 Enter the following commands:
-
+```
 openssl s_client -connect 192.168.1.1:25 -starttls smtp
 
 HELO 192.168.1.1
@@ -106,9 +106,10 @@ Text
 .
 
 QUIT
-
+```
 The SMS Gateway will answer now:
 
+```
 CONNECTED(0000012C)
 
 depth=0 C = Germany, ST = Saarland, L = Saarbrücken, O = BASIS Europe, CN =
@@ -247,6 +248,8 @@ DONE
 
 * * *
 
+```
+
 ## 3\. Test SMTP
 
 Can only be tested with the option "Force Encryption" deactivated!
@@ -274,14 +277,15 @@ Text
 .  
   
 
-  6. The SMS Gateway will answer:  
+6. The SMS Gateway will answer:  
   
+  ```
 250 localhost  
 250 2.1.0 Ok  
 250 2.1.5 Ok  
 354 End data with <CR><LF>.<CR><LF>  
 250 2.0.0 Ok: queued as ...  
-  
+  ```
 
   
 
